@@ -177,7 +177,8 @@ function createIndexPage(folderName, files) {
         .filter(file => file.endsWith('.md'))
         .map(file => {
             const name = path.basename(file, '.md');
-            return `<li><a href="${name.replace(/\s+/g, '-').toLowerCase()}.html">${name}</a></li>`;
+            const htmlFileName = file.replace('.md', '.html');
+            return `<li><a href="${encodeURIComponent(htmlFileName)}">${name}</a></li>`;
         })
         .join('\n');
     
