@@ -219,9 +219,9 @@ function processMarkdownFile(filePath, relativePath) {
     
     // Calculate depth for CSS path and navigation links
     const currentDir = path.dirname(relativePath);
-    const depth = currentDir === '.' ? 1 : currentDir.split('/').length + 1;
-    const cssPath = '../'.repeat(depth) + 'styles.css';
-    const basePath = '../'.repeat(depth);
+    const depth = currentDir === '.' ? 0 : currentDir.split('/').length;
+    const cssPath = depth === 0 ? 'styles.css' : '../'.repeat(depth) + 'styles.css';
+    const basePath = depth === 0 ? '' : '../'.repeat(depth);
     
     const fullHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -261,8 +261,8 @@ function processMarkdownFile(filePath, relativePath) {
 
 function createIndexPage(folderName, files, subdirectories = [], depth = 1) {
     const title = folderName.replace(/^\d+_/, '').replace(/_/g, ' ');
-    const cssPath = '../'.repeat(depth) + 'styles.css';
-    const basePath = '../'.repeat(depth);
+    const cssPath = depth === 0 ? 'styles.css' : '../'.repeat(depth) + 'styles.css';
+    const basePath = depth === 0 ? '' : '../'.repeat(depth);
     
     const fileList = files
         .filter(file => file.endsWith('.md'))
