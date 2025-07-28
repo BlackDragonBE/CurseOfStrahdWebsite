@@ -1,0 +1,19 @@
+{
+  "name": "curse-of-strahd-website",
+  "version": "1.0.0",
+  "description": "Static website generator for Curse of Strahd campaign notes",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "start": "npm run build && npx http-server docs -p 3000"
+  },
+  "dependencies": {
+    "marked": "^4.3.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  },
+  "keywords": ["dnd", "curse-of-strahd", "static-site", "github-pages"],
+  "author": "",
+  "license": "MIT"
+}
