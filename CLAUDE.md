@@ -10,13 +10,15 @@ This is a static website generator that converts an Obsidian vault containing Cu
 
 **Build and Development:**
 ```bash
-npm install              # Install dependencies (marked, http-server)
+npm install              # Install dependencies (marked, http-server, chokidar, ws)
+npm run dev             # Development server with live reload and file watching
 npm run build           # Generate complete website in docs/ folder
 npm start               # Build and serve locally on localhost:3000
 ```
 
 **Source Structure:**
 - Source files are in `../CurseOfStrahdNotes/` (external Obsidian vault)
+- Static CSS is in `src/styles.css` (edit this file for theme changes)
 - Generated website outputs to `docs/` folder for GitHub Pages
 
 ## Architecture
@@ -28,7 +30,7 @@ The build system follows this pipeline:
 1. **File Mapping Phase:** Scans all markdown files to create a global filename → path mapping for link resolution
 2. **Content Processing:** Converts each category folder, handling nested directories and Obsidian link syntax  
 3. **HTML Generation:** Creates complete HTML pages with consistent navigation and styling
-4. **Asset Management:** Copies images and generates CSS
+4. **Asset Management:** Copies images and static CSS file
 
 ### Content Categories
 

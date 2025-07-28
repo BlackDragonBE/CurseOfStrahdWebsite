@@ -5,15 +5,23 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "start": "npm run build && npx http-server docs -p 3000"
+    "start": "npm run build && npx http-server docs -p 3000",
+    "dev": "node dev-server.js"
   },
   "dependencies": {
     "marked": "^4.3.0"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "chokidar": "^4.0.3",
+    "http-server": "^14.1.1",
+    "ws": "^8.18.3"
   },
-  "keywords": ["dnd", "curse-of-strahd", "static-site", "github-pages"],
+  "keywords": [
+    "dnd",
+    "curse-of-strahd",
+    "static-site",
+    "github-pages"
+  ],
   "author": "",
   "license": "MIT"
 }
