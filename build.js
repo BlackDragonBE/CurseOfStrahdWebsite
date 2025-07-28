@@ -94,11 +94,88 @@ function resolveObsidianLink(linkText) {
     return `${linkText.replace(/\s+/g, '-').toLowerCase()}.html`;
 }
 
+function parseYamlFrontmatter(content) {
+    const frontmatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/;
+    const match = content.match(frontmatterRegex);
+    
+    if (!match) {
+        return { frontmatter: null, content: content };
+    }
+    
+    const yamlString = match[1];
+    const bodyContent = match[2];
+    const frontmatter = {};
+    
+    // Simple YAML parser for basic key-value pairs and arrays
+    const lines = yamlString.split('\n');
+    let currentKey = null;
+    
+    for (const line of lines) {
+        const trimmed = line.trim();
+        if (!trimmed) continue;
+        
+        if (trimmed.startsWith('- ')) {
+            // Array item
+            if (currentKey) {
+                if (!Array.isArray(frontmatter[currentKey])) {
+                    frontmatter[currentKey] = [];
+                }
+                frontmatter[currentKey].push(trimmed.substring(2));
+            }
+        } else if (trimmed.includes(':')) {
+            // Key-value pair
+            const colonIndex = trimmed.indexOf(':');
+            const key = trimmed.substring(0, colonIndex).trim();
+            const value = trimmed.substring(colonIndex + 1).trim();
+            
+            if (value) {
+                frontmatter[key] = value;
+                currentKey = null;
+            } else {
+                // Key without value, likely followed by array
+                currentKey = key;
+            }
+        }
+    }
+    
+    return { frontmatter, content: bodyContent };
+}
+
+function generatePropertiesHtml(frontmatter) {
+    if (!frontmatter || Object.keys(frontmatter).length === 0) {
+        return '';
+    }
+    
+    const propertyItems = Object.entries(frontmatter)
+        .map(([key, value]) => {
+            const displayKey = key.charAt(0).toUpperCase() + key.slice(1);
+            let displayValue;
+            
+            if (Array.isArray(value)) {
+                displayValue = value.join(', ');
+            } else {
+                displayValue = value;
+            }
+            
+            return `<li><span class="property-key">${displayKey}:</span> <span class="property-value">${displayValue}</span></li>`;
+        })
+        .join('\n');
+    
+    return `<div class="note-properties">
+        <ul class="properties-list">
+            ${propertyItems}
+        </ul>
+    </div>`;
+}
+
 function processMarkdownFile(filePath, relativePath) {
     const content = fs.readFileSync(filePath, 'utf-8');
     
+    // Parse YAML frontmatter
+    const { frontmatter, content: bodyContent } = parseYamlFrontmatter(content);
+    
     // Convert Obsidian-style links [[link]] to markdown links
-    const processedContent = content.replace(/\[\[([^\]]+)\]\]/g, (match, linkText) => {
+    const processedContent = bodyContent.replace(/\[\[([^\]]+)\]\]/g, (match, linkText) => {
         // Handle Obsidian pipe syntax [[Target|Display Text]]
         let targetFile = linkText;
         let displayText = linkText;
@@ -134,6 +211,9 @@ function processMarkdownFile(filePath, relativePath) {
     // Convert markdown to HTML
     const htmlContent = marked(processedContent);
     
+    // Generate properties HTML
+    const propertiesHtml = generatePropertiesHtml(frontmatter);
+    
     // Create full HTML page
     const title = path.basename(filePath, '.md');
     
@@ -168,6 +248,7 @@ function processMarkdownFile(filePath, relativePath) {
     <main>
         <article>
             <h1>${title}</h1>
+            ${propertiesHtml}
             ${htmlContent}
         </article>
     </main>
@@ -176,6 +257,7 @@ function processMarkdownFile(filePath, relativePath) {
     
     return fullHtml;
 }
+
 
 function createIndexPage(folderName, files, subdirectories = [], depth = 1) {
     const title = folderName.replace(/^\d+_/, '').replace(/_/g, ' ');
@@ -276,6 +358,7 @@ function processFolder(folderName) {
                 const htmlFileName = item.replace('.md', '.html');
                 const outputPath = path.join(currentOutput, htmlFileName);
                 const relativePath = path.relative(OUTPUT_DIR, outputPath).replace(/\\/g, '/');
+                
                 const htmlContent = processMarkdownFile(sourcePath, relativePath);
                 fs.writeFileSync(outputPath, htmlContent);
             }
