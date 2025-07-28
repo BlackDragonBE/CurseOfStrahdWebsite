@@ -184,6 +184,20 @@ function createIndexPage(folderName, files, subdirectories = [], depth = 1) {
     
     const fileList = files
         .filter(file => file.endsWith('.md'))
+        .sort((a, b) => {
+            // Extract numeric prefix for natural sorting (e.g., "1_cos.md" vs "10_cos.md")
+            const aMatch = a.match(/^(\d+)/);
+            const bMatch = b.match(/^(\d+)/);
+            
+            if (aMatch && bMatch) {
+                const aNum = parseInt(aMatch[1], 10);
+                const bNum = parseInt(bMatch[1], 10);
+                return aNum - bNum;
+            }
+            
+            // Fallback to alphabetical sorting
+            return a.localeCompare(b);
+        })
         .map(file => {
             const name = path.basename(file, '.md');
             const htmlFileName = file.replace('.md', '.html');
