@@ -18,7 +18,7 @@ npm start               # Build and serve locally on localhost:3000
 
 **Source Structure:**
 - Source files are in `../CurseOfStrahdNotes/` (external Obsidian vault)
-- Static CSS is in `src/styles.css` (edit this file for theme changes)
+- Static CSS is in `src/styles.css` (edit this file for theme changes - gets copied to `docs/styles.css` during build)
 - Generated website outputs to `docs/` folder for GitHub Pages
 
 ## Architecture
