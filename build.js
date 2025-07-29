@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Import modular components
-const { ensureDir, copyImages, createCSS, createSearchJS } = require('./lib/fs-utils');
+const { ensureDir, copyImages, createCSS, createSearchJS, copySrcImages } = require('./lib/fs-utils');
 const { buildFileMap } = require('./lib/markdown-processor');
 const { processFolder, createMainIndex } = require('./lib/folder-processor');
 const { createSearchIndex } = require('./lib/search-utils');
@@ -55,6 +55,7 @@ function build() {
     createMainIndex(OUTPUT_DIR);
     createCSS(__dirname, OUTPUT_DIR);
     createSearchJS(__dirname, OUTPUT_DIR);
+    copySrcImages(__dirname, OUTPUT_DIR);
     createSearchIndex(searchIndex, OUTPUT_DIR);
     
     console.log('Build complete! Website generated in docs/ folder');
