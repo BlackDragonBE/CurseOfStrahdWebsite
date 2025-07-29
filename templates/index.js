@@ -46,7 +46,6 @@ function renderIndexTemplate({ title, cssPath, basePath, jsPath, combinedList, f
 <body>
     <nav>
         <div class="nav-container">
-            <h1><a href="${basePath}index.html">Curse of Strahd Campaign</a></h1>
             <ul>
                 ${navItems}
             </ul>

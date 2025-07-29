@@ -117,9 +117,13 @@ nav h1 a:hover {
 
 nav ul {
   display: flex;
-  list-style: none;
-  gap: var(--space-sm);
   align-items: center;
+  list-style: none;
+  height: 50px;
+  line-height: 50px;
+  margin-left: 0px !important;
+  margin-bottom: 0px !important;
+  /* gap: var(--space-sm); */
 }
 
 /* Search Styles */

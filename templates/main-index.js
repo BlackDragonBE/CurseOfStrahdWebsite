@@ -48,7 +48,6 @@ function renderMainIndexTemplate(foldersWithContent = {}) {
 <body>
     <nav>
         <div class="nav-container">
-            <h1><a href="index.html">Curse of Strahd Campaign</a></h1>
             <ul>
                 ${navItems}
             </ul>

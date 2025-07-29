@@ -124,9 +124,13 @@ class SearchEngine {
         searchContainer.appendChild(shortcut);
         searchContainer.appendChild(searchResults);
         
-        // Insert search container before the navigation links
+        // Insert search container after the navigation links
         const navList = nav.querySelector('ul');
-        nav.insertBefore(searchContainer, navList);
+        if (navList && navList.nextSibling) {
+            nav.insertBefore(searchContainer, navList.nextSibling);
+        } else {
+            nav.appendChild(searchContainer);
+        }
         
         // Store references
         this.searchInput = searchInput;
