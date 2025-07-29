@@ -1,6 +1,7 @@
 # Curse of Strahd Campaign Website
 
 This project automatically generates a static website from your Obsidian vault containing Curse of Strahd campaign notes.
+Link to website: [Curse of Strahd Campaign Website](https://blackdragonbe.github.io/CurseOfStrahdWebsite/)
 
 ## Features
 
