@@ -507,6 +507,9 @@ class HoverPreview {
             // Skip if already processed
             if (link.hasAttribute('data-preview-attached')) return;
             
+            // Skip navigation links, folder links, and buttons that shouldn't have previews
+            if (this.shouldSkipLink(link)) return;
+            
             link.setAttribute('data-preview-attached', 'true');
             
             link.addEventListener('mouseenter', (e) => {
@@ -517,6 +520,32 @@ class HoverPreview {
                 this.handleLinkLeave();
             });
         });
+    }
+    
+    shouldSkipLink(link) {
+        // Skip links in navigation
+        if (link.closest('nav')) return true;
+        
+        // Skip links that are buttons or have button-like classes
+        if (link.classList.contains('button') || 
+            link.classList.contains('btn') ||
+            link.classList.contains('nav-link') ||
+            link.classList.contains('category-card') ||
+            link.closest('.category-card')) return true;
+        
+        // Skip folder/index links (they typically end with / or are index pages)
+        const href = link.getAttribute('href');
+        if (href && (href.endsWith('/index.html') || href.includes('/index.html'))) return true;
+        
+        // Skip if the link text suggests it's navigation (very short text)
+        const linkText = link.textContent.trim();
+        if (linkText.length < 3) return true;
+        
+        // Skip common navigation text
+        const navTexts = ['home', 'back', 'up', 'index', 'menu'];
+        if (navTexts.includes(linkText.toLowerCase())) return true;
+        
+        return false;
     }
     
     handleLinkHover(link) {
@@ -551,14 +580,6 @@ class HoverPreview {
         const url = new URL(href, window.location.href);
         const urlKey = url.pathname;
         
-        // Position preview
-        this.positionPreview(link);
-        
-        // Show loading state
-        this.preview.querySelector('.preview-content').innerHTML = 
-            '<div class="preview-loading">Loading preview...</div>';
-        this.preview.classList.add('visible');
-        
         try {
             this.isLoading = true;
             
@@ -576,21 +597,25 @@ class HoverPreview {
                 const html = await response.text();
                 content = this.extractContent(html);
                 
-                // Cache the content
-                this.cache.set(urlKey, content);
+                // Only cache if content exists
+                if (content) {
+                    this.cache.set(urlKey, content);
+                }
             }
             
-            // Only show if still hovering the same link
-            if (this.currentLink === link && this.preview.classList.contains('visible')) {
+            // Only show preview if we have content and still hovering the same link
+            if (this.currentLink === link && content) {
+                // Position preview
+                this.positionPreview(link);
+                
+                // Show preview with content
                 this.preview.querySelector('.preview-content').innerHTML = content;
+                this.preview.classList.add('visible');
             }
             
         } catch (error) {
             console.error('Failed to load preview:', error);
-            if (this.currentLink === link && this.preview.classList.contains('visible')) {
-                this.preview.querySelector('.preview-content').innerHTML = 
-                    '<div class="preview-error">Failed to load preview</div>';
-            }
+            // Don't show anything on error
         } finally {
             this.isLoading = false;
         }
@@ -603,7 +628,7 @@ class HoverPreview {
         
         // Find the main article content
         const article = doc.querySelector('main article');
-        if (!article) return '<div class="preview-error">No content found</div>';
+        if (!article) return null; // Return null instead of error message
         
         // Clone the article to avoid modifying the original
         const content = article.cloneNode(true);

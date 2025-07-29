@@ -1,6 +1,7 @@
-# CLAUDE.md
+## CLAUDE MAIN RULES
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+- **Do not run any commands**: Claude Code should never execute commands like `npm install`, `npm run build`, or `npm start`. These are handled by the build system and development server.
+- **Only edit source files**: Claude Code should only modify source files like `build.js`, `dev-server-live.js`, and template files in the `templates/` directory. It should not change generated files in the `docs/` folder as those get overwritten by the build process.
 
 ## Project Overview
 
@@ -15,8 +16,6 @@ npm run dev             # Development server with live reload and file watching
 npm run build           # Generate complete website in docs/ folder
 npm start               # Build and serve locally on localhost:3000
 ```
-
-Claude Code should never run these commands. The build command is constantly running in the background, and the live server always active while developing.
 
 **Source Structure:**
 - Source files are in `../CurseOfStrahdNotes/` (external Obsidian vault)
@@ -119,11 +118,10 @@ Each page uses consistent navigation with links to all main sections. The build 
 ## Development Notes
 
 **When modifying the build system:**
-- Always test with `npm run build && npm start` 
 - The `FOLDERS_TO_COPY` array in `build.js` controls which source folders are processed
 - Navigation menus are defined in the three template files: `templates/page.js`, `templates/index.js`, and `templates/main-index.js`
 - Link resolution depends on exact filename matching - changes to source file names may break internal links
-- HTML templates are now in separate files for easier editing - modify template files rather than inline strings
+- HTML templates are in separate files for easier editing - modify template files rather than inline strings
 - Each module has a specific purpose - follow the separation of concerns when adding features
 
 **Content Updates:**
