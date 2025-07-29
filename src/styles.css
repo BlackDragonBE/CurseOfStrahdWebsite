@@ -117,11 +117,12 @@ nav ul {
   display: flex;
   align-items: center;
   list-style: none;
-  height: 50px;
-  line-height: 50px;
+  height: auto;
+  line-height: 1.6;
   margin-left: 0px !important;
   margin-bottom: 0px !important;
-  /* gap: var(--space-sm); */
+  flex-wrap: wrap;
+  gap: var(--space-xs);
 }
 
 /* Search Styles */
@@ -649,6 +650,33 @@ img {
   border-radius: var(--radius-md);
   margin: var(--space-lg) 0;
   box-shadow: var(--shadow-md);
+  display: block;
+  /* Prevent images from overflowing containers */
+  object-fit: contain;
+}
+
+/* Ensure images in articles are properly contained */
+article img {
+  max-width: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  /* Override any inline max-width styles that could cause overflow */
+}
+
+/* Handle floated images specifically */
+article img[style*="float"] {
+  max-width: 50% !important;
+  box-sizing: border-box;
+}
+
+/* On mobile, disable floating and ensure full containment */
+@media (max-width: 768px) {
+  article img[style*="float"] {
+    float: none !important;
+    max-width: 100% !important;
+    margin: var(--space-md) 0 !important;
+    display: block;
+  }
 }
 
 /* Horizontal Rule */
@@ -670,6 +698,8 @@ hr {
   nav ul {
     justify-content: center;
     flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding: var(--space-xs) 0;
   }
 
   .search-container {
