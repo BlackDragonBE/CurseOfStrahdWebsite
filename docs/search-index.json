@@ -577,6 +577,15 @@
     ]
   },
   {
+    "title": "Argynvost",
+    "path": "3_Characters/Argynvost.html",
+    "category": "Characters",
+    "content": "Argynvost was een nobele zilveren draak in menselijke vorm die Argynvostholt bezat. Hij was de leider van de orde van de zilveren draak en gaf onderdak aan vluchtelingen De draak is vermoord door krijgers van Strahd lang geleden De geest van de draak hangt misschien nog rond in Argynvostholt Zijn beenderen zijn niet in zijn mausoleum terecht gekomen, maar verspreid onder zijn vijanden. Een shilderij gloeide in Argynvostholt Een drakengedaante van Argynvost verscheen en zei dat zijn schedel in he...",
+    "frontmatter": {
+      "npcStatus": "Dead"
+    }
+  },
+  {
     "title": "Baba Lysaga",
     "path": "3_Characters/Baba Lysaga.html",
     "category": "Characters",
@@ -1125,6 +1134,13 @@
     "path": "7_Quests/Inactive/De meat pies en de windmolen.html",
     "category": "Quests",
     "content": "Zie Windmolen en Meat pies . Terra was een tijd onder de invloed van de verslavende Meat pies .",
+    "frontmatter": {}
+  },
+  {
+    "title": "De schedel van Argynvost",
+    "path": "7_Quests/Inactive/De schedel van Argynvost.html",
+    "category": "Quests",
+    "content": "We moeten de schedel van Argynvost vinden in \"het fort van de vijand\". Warschijnlijk het kasteel van Strahd . We moeten daarna de schedel terug in de crypte van Argynvost leggen, in Argynvostholt . Daarna zal Argynvost voor licht zorgen.",
     "frontmatter": {}
   },
   {
