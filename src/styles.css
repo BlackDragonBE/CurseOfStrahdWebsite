@@ -810,3 +810,104 @@ select:focus {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
 }
+
+/* Hover Preview */
+.preview-popup {
+  position: fixed;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 400px;
+  max-height: 500px;
+  width: 400px;
+  padding: var(--space-lg);
+  z-index: 1000;
+  overflow: hidden;
+  display: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(10px);
+}
+
+.preview-popup.visible {
+  display: block;
+  pointer-events: auto;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.preview-content {
+  max-height: 450px;
+  overflow-y: auto;
+  padding-right: var(--space-sm);
+}
+
+.preview-content h1 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-secondary);
+  color: var(--accent-primary);
+}
+
+.preview-content h2 {
+  font-size: 1.2rem;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.preview-content h3 {
+  font-size: 1.1rem;
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.preview-content p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+}
+
+.preview-content ul,
+.preview-content ol {
+  margin-left: var(--space-md);
+  margin-bottom: var(--space-sm);
+}
+
+.preview-content li {
+  margin-bottom: var(--space-xs);
+}
+
+.preview-content img {
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-sm) 0;
+  border-radius: var(--radius-sm);
+}
+
+.preview-content .note-properties {
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 0.85rem;
+}
+
+.preview-content .properties-list {
+  gap: var(--space-sm);
+}
+
+.preview-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.preview-error {
+  color: var(--error);
+  text-align: center;
+  padding: var(--space-lg);
+  font-size: 0.9rem;
+}

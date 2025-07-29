@@ -441,5 +441,260 @@ class SearchEngine {
     }
 }
 
-// Initialize search engine when script loads
+// Hover Preview System
+class HoverPreview {
+    constructor() {
+        this.preview = null;
+        this.currentLink = null;
+        this.showTimer = null;
+        this.hideTimer = null;
+        this.cache = new Map();
+        this.isLoading = false;
+        
+        this.init();
+    }
+    
+    init() {
+        // Wait for DOM to load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.setupPreview());
+        } else {
+            this.setupPreview();
+        }
+    }
+    
+    setupPreview() {
+        this.createPreviewElement();
+        this.setupEventListeners();
+    }
+    
+    createPreviewElement() {
+        this.preview = document.createElement('div');
+        this.preview.className = 'preview-popup';
+        this.preview.innerHTML = '<div class="preview-content"></div>';
+        document.body.appendChild(this.preview);
+    }
+    
+    setupEventListeners() {
+        // Add event listeners to all internal links
+        this.attachToLinks();
+        
+        // Re-attach when new content is loaded (for dynamic content)
+        const observer = new MutationObserver(() => {
+            this.attachToLinks();
+        });
+        
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+        
+        // Preview popup event listeners
+        this.preview.addEventListener('mouseenter', () => {
+            this.clearHideTimer();
+        });
+        
+        this.preview.addEventListener('mouseleave', () => {
+            this.hidePreview();
+        });
+    }
+    
+    attachToLinks() {
+        // Find all internal links (links to .html files)
+        const links = document.querySelectorAll('a[href$=".html"]');
+        
+        links.forEach(link => {
+            // Skip if already processed
+            if (link.hasAttribute('data-preview-attached')) return;
+            
+            link.setAttribute('data-preview-attached', 'true');
+            
+            link.addEventListener('mouseenter', (e) => {
+                this.handleLinkHover(e.target);
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                this.handleLinkLeave();
+            });
+        });
+    }
+    
+    handleLinkHover(link) {
+        this.currentLink = link;
+        
+        // Clear any existing timers
+        this.clearShowTimer();
+        this.clearHideTimer();
+        
+        // Start show timer
+        this.showTimer = setTimeout(() => {
+            this.showPreview(link);
+        }, 500); // 500ms delay before showing
+    }
+    
+    handleLinkLeave() {
+        this.clearShowTimer();
+        
+        // Start hide timer
+        this.hideTimer = setTimeout(() => {
+            this.hidePreview();
+        }, 300); // 300ms delay before hiding
+    }
+    
+    async showPreview(link) {
+        if (!link || this.isLoading) return;
+        
+        const href = link.getAttribute('href');
+        if (!href) return;
+        
+        // Convert relative URL to absolute
+        const url = new URL(href, window.location.href);
+        const urlKey = url.pathname;
+        
+        // Position preview
+        this.positionPreview(link);
+        
+        // Show loading state
+        this.preview.querySelector('.preview-content').innerHTML = 
+            '<div class="preview-loading">Loading preview...</div>';
+        this.preview.classList.add('visible');
+        
+        try {
+            this.isLoading = true;
+            
+            // Check cache first
+            let content;
+            if (this.cache.has(urlKey)) {
+                content = this.cache.get(urlKey);
+            } else {
+                // Fetch page content
+                const response = await fetch(url.href);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                
+                const html = await response.text();
+                content = this.extractContent(html);
+                
+                // Cache the content
+                this.cache.set(urlKey, content);
+            }
+            
+            // Only show if still hovering the same link
+            if (this.currentLink === link && this.preview.classList.contains('visible')) {
+                this.preview.querySelector('.preview-content').innerHTML = content;
+            }
+            
+        } catch (error) {
+            console.error('Failed to load preview:', error);
+            if (this.currentLink === link && this.preview.classList.contains('visible')) {
+                this.preview.querySelector('.preview-content').innerHTML = 
+                    '<div class="preview-error">Failed to load preview</div>';
+            }
+        } finally {
+            this.isLoading = false;
+        }
+    }
+    
+    extractContent(html) {
+        // Create a temporary DOM to parse the HTML
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        // Find the main article content
+        const article = doc.querySelector('main article');
+        if (!article) return '<div class="preview-error">No content found</div>';
+        
+        // Clone the article to avoid modifying the original
+        const content = article.cloneNode(true);
+        
+        // Remove any script tags
+        const scripts = content.querySelectorAll('script');
+        scripts.forEach(script => script.remove());
+        
+        // Convert any relative image paths to absolute
+        const images = content.querySelectorAll('img');
+        images.forEach(img => {
+            const src = img.getAttribute('src');
+            if (src && !src.startsWith('http') && !src.startsWith('data:')) {
+                // Make relative to the page we're previewing
+                const baseUrl = new URL(this.currentLink.href);
+                const absoluteUrl = new URL(src, baseUrl);
+                img.setAttribute('src', absoluteUrl.href);
+            }
+        });
+        
+        // Convert any relative links to absolute (to prevent broken navigation)
+        const links = content.querySelectorAll('a[href]');
+        links.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href && !href.startsWith('http') && !href.startsWith('#')) {
+                const baseUrl = new URL(this.currentLink.href);
+                const absoluteUrl = new URL(href, baseUrl);
+                link.setAttribute('href', absoluteUrl.href);
+            }
+        });
+        
+        return content.innerHTML;
+    }
+    
+    positionPreview(link) {
+        const linkRect = link.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const previewWidth = 400;
+        const previewHeight = 500;
+        const gap = 10;
+        
+        let left = linkRect.right + gap;
+        let top = linkRect.top;
+        
+        // Adjust if preview would go off right edge
+        if (left + previewWidth > viewportWidth - gap) {
+            left = linkRect.left - previewWidth - gap; // Show on left side instead
+        }
+        
+        // Adjust if preview would go off bottom edge
+        if (top + previewHeight > viewportHeight - gap) {
+            top = viewportHeight - previewHeight - gap;
+        }
+        
+        // Ensure preview doesn't go above viewport
+        if (top < gap) {
+            top = gap;
+        }
+        
+        // Ensure preview doesn't go off left edge
+        if (left < gap) {
+            left = gap;
+        }
+        
+        this.preview.style.left = left + 'px';
+        this.preview.style.top = top + 'px';
+    }
+    
+    hidePreview() {
+        this.preview.classList.remove('visible');
+        this.currentLink = null;
+        this.clearHideTimer();
+        this.clearShowTimer();
+    }
+    
+    clearShowTimer() {
+        if (this.showTimer) {
+            clearTimeout(this.showTimer);
+            this.showTimer = null;
+        }
+    }
+    
+    clearHideTimer() {
+        if (this.hideTimer) {
+            clearTimeout(this.hideTimer);
+            this.hideTimer = null;
+        }
+    }
+}
+
+// Initialize search engine and hover preview when script loads
 const searchEngine = new SearchEngine();
+const hoverPreview = new HoverPreview();

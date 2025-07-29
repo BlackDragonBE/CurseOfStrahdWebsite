@@ -559,7 +559,7 @@
     "title": "Arabelle",
     "path": "3_Characters/Arabelle.html",
     "category": "Characters",
-    "content": "Een jong Vistani meisje. Haar vader is",
+    "content": "Een jong Vistani meisje. Haar vader is Luvash .",
     "frontmatter": {
       "aliases": [
         "Arabelle",
@@ -568,7 +568,8 @@
       ],
       "npcProperties": [
         "\"[[Vistani]]\""
-      ]
+      ],
+      "npcStatus": "Alive"
     },
     "aliases": [
       "Arabelle",
