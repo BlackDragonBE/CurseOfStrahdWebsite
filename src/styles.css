@@ -488,6 +488,7 @@ h1 {
   text-align: center;
   margin-bottom: var(--space-2xl);
   padding-bottom: var(--space-lg);
+  color: #ff8f00;
 }
 
 h2 {
