@@ -965,6 +965,24 @@
     ]
   },
   {
+    "title": "De party",
+    "path": "3_Characters/_Players/De party.html",
+    "category": "Characters",
+    "content": "Leden: Genris Glim Niobe Terra",
+    "frontmatter": {
+      "aliases": [
+        "de party",
+        "wij",
+        "avonturiers"
+      ]
+    },
+    "aliases": [
+      "de party",
+      "wij",
+      "avonturiers"
+    ]
+  },
+  {
     "title": "Genris",
     "path": "3_Characters/_Players/Genris.html",
     "category": "Characters",
