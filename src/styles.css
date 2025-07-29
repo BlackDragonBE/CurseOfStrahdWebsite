@@ -436,16 +436,36 @@ article {
 }
 
 .file-list a {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: var(--space-md) var(--space-lg);
   color: var(--text-primary);
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
+  gap: var(--space-sm);
 }
 
 .file-list a:hover {
   color: var(--accent-primary);
+}
+
+.folder-icon {
+  font-size: 1.1em;
+  color: var(--accent-secondary);
+  min-width: 1.2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.file-icon {
+  font-size: 1em;
+  color: var(--text-muted);
+  min-width: 1.2em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Typography */
