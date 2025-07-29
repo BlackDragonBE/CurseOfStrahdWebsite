@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barovia Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // Image dimensions
+        const imageWidth = 5025;
+        const imageHeight = 3225;
+        
+        // Create the map with CRS.Simple for pixel coordinates
+        const map = L.map('map', {
+            crs: L.CRS.Simple,
+            minZoom: -2,  // Allow zooming out further
+            maxZoom: 3    // Allow zooming in for detail
+        });
+        
+        // Define the image bounds in pixel coordinates
+        // [0, 0] is top-left, [imageHeight, imageWidth] is bottom-right
+        const bounds = [[0, 0], [imageHeight, imageWidth]];
+        
+        // Add the image overlay
+        L.imageOverlay('/images/Barovia.jpg', bounds).addTo(map);
+        
+        // Fit the map view to show the entire image
+        map.fitBounds(bounds);
+        
+        // Optional: Add a marker example (uncomment to use)
+        // L.marker([1612, 2512]).addTo(map).bindPopup('Center of the map');
+        
+        // Optional: Convert pixel coordinates to leaflet coordinates
+        // Useful if you want to add markers later
+        function pixelToLeaflet(x, y) {
+            return [imageHeight - y, x];
+        }
+    </script>
+</body>
+</html>

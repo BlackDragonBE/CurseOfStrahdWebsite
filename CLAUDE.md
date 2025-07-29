@@ -1,7 +1,7 @@
 ## CLAUDE MAIN RULES
 
 - **Do not run any commands**: Claude Code should never execute commands like `npm install`, `npm run build`, or `npm start`. These are handled by the build system and development server.
-- **Only edit source files**: Claude Code should only modify source files like `build.js`, `dev-server-live.js`, and template files in the `templates/` directory. It should not change generated files in the `docs/` folder as those get overwritten by the build process.
+- **Only edit source files**: Do not change generated files in the `docs/` folder as those get overwritten by the build process.
 
 ## Project Overview
 

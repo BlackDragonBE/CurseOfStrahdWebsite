@@ -655,14 +655,6 @@ img {
   object-fit: contain;
 }
 
-/* Ensure images in articles are properly contained */
-article img {
-  max-width: 100% !important;
-  width: auto !important;
-  height: auto !important;
-  /* Override any inline max-width styles that could cause overflow */
-}
-
 /* Handle floated images specifically */
 article img[style*="float"] {
   max-width: 50% !important;
