@@ -7,34 +7,34 @@
   --bg-tertiary: #1a1a1b;
   --bg-elevated: #1c1c1d;
   --bg-hover: #252526;
-  
+
   /* Text Colors */
   --text-primary: #ffffff;
   --text-secondary: #b3b3b3;
   --text-muted: #808080;
   --text-disabled: #4d4d4d;
-  
+
   /* Accent Colors */
   --accent-primary: #007acc;
   --accent-secondary: #0099ff;
   --accent-tertiary: #66ccff;
-  
+
   /* Status Colors */
   --success: #4bb543;
   --warning: #ff9500;
   --error: #ff453a;
-  
+
   /* Borders */
   --border-primary: #333333;
   --border-secondary: #2a2a2a;
   --border-hover: #404040;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.6);
-  
+
   /* Spacing */
   --space-xs: 0.25rem;
   --space-sm: 0.5rem;
@@ -42,7 +42,7 @@
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-2xl: 3rem;
-  
+
   /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -65,9 +65,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: var(--text-primary);
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('./images/background.jpeg') center/cover no-repeat fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./images/background.jpeg') center/cover no-repeat fixed;
   background-color: var(--bg-primary);
   min-height: 100vh;
   font-feature-settings: 'liga' 1, 'calt' 1;
@@ -299,7 +297,7 @@ article {
 }
 
 article::after {
-  content: "";
+  content: '';
   display: table;
   clear: both; /* Clear floats */
 }
@@ -429,12 +427,12 @@ article::after {
   margin: var(--space-xl) 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
+  gap: var(--space-sm);
 }
 
 .file-list li {
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-secondary);
+  /* background: var(--bg-tertiary); */
+  border: 2px solid var(--border-primary);
   border-radius: var(--radius-md);
   transition: all 0.2s ease;
   overflow: hidden;
@@ -449,7 +447,7 @@ article::after {
 .file-list a {
   display: flex;
   align-items: center;
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-sm) var(--space-sm);
   color: var(--text-primary);
   text-decoration: none;
   font-weight: 500;
@@ -480,7 +478,12 @@ article::after {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   color: var(--text-primary);
   font-weight: 600;
   line-height: 1.3;
@@ -490,7 +493,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: var(--space-2xl);
+  /* margin-bottom: var(--space-2xl); */
   padding-bottom: var(--space-lg);
   color: #ff8f00;
 }
@@ -541,7 +544,8 @@ a:focus {
 }
 
 /* Lists */
-ul, ol {
+ul,
+ol {
   color: var(--text-secondary);
   margin-left: var(--space-lg);
   margin-bottom: var(--space-md);
@@ -552,12 +556,14 @@ li {
 }
 
 /* Text Formatting */
-strong, b {
+strong,
+b {
   color: var(--text-primary);
   font-weight: 600;
 }
 
-em, i {
+em,
+i {
   color: var(--text-secondary);
   font-style: italic;
 }
@@ -614,7 +620,8 @@ table {
   border: 1px solid var(--border-primary);
 }
 
-th, td {
+th,
+td {
   padding: var(--space-md);
   text-align: left;
   border-bottom: 1px solid var(--border-secondary);
@@ -659,68 +666,68 @@ hr {
     gap: var(--space-md);
     padding: 0 var(--space-lg);
   }
-  
+
   nav ul {
     justify-content: center;
     flex-wrap: wrap;
   }
-  
+
   .search-container {
     margin: 0;
     width: 100%;
     max-width: 400px;
   }
-  
+
   .search-input {
     width: 100%;
   }
-  
+
   main {
     margin: var(--space-lg) auto;
     padding: 0 var(--space-lg);
   }
-  
+
   article {
     padding: var(--space-lg);
   }
-  
+
   .section-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
   }
-  
+
   .section-card {
     padding: var(--space-lg);
   }
-  
+
   h1 {
     font-size: 2rem;
   }
-  
+
   h2 {
     font-size: 1.5rem;
   }
-  
+
   h3 {
     font-size: 1.3rem;
   }
-  
+
   .properties-list {
     flex-direction: column;
     gap: var(--space-xs);
   }
-  
+
   .properties-list li {
     flex-direction: column;
     align-items: flex-start;
     white-space: normal;
   }
-  
+
   .property-key {
     margin-right: 0;
     margin-bottom: 2px;
   }
-  
+
   .file-list {
     grid-template-columns: 1fr;
   }
@@ -731,27 +738,27 @@ hr {
     --space-xl: 1rem;
     --space-2xl: 1.5rem;
   }
-  
+
   nav {
     padding: var(--space-sm) 0;
   }
-  
+
   .nav-container {
     padding: 0 var(--space-md);
   }
-  
+
   main {
     padding: 0 var(--space-md);
   }
-  
+
   article {
     padding: var(--space-md);
   }
-  
+
   .section-card {
     padding: var(--space-md);
   }
-  
+
   h1 {
     font-size: 1.8rem;
   }
