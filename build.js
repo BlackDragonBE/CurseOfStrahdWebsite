@@ -18,6 +18,9 @@ const FOLDERS_TO_COPY = [
 // Global file map to resolve Obsidian links
 let fileMap = new Map();
 
+// Global search index to store searchable content
+let searchIndex = [];
+
 function ensureDir(dir) {
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
@@ -92,6 +95,35 @@ function resolveObsidianLink(linkText) {
     
     // If no match found, return original with .html extension
     return `${linkText.replace(/\s+/g, '-').toLowerCase()}.html`;
+}
+
+function extractTextFromHtml(html) {
+    // Remove HTML tags and decode entities
+    return html
+        .replace(/<[^>]*>/g, ' ')
+        .replace(/&quot;/g, '"')
+        .replace(/&amp;/g, '&')
+        .replace(/&lt;/g, '<')
+        .replace(/&gt;/g, '>')
+        .replace(/&nbsp;/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim();
+}
+
+function getCategoryFromPath(relativePath) {
+    const parts = relativePath.split('/');
+    const folder = parts[0];
+    
+    const categoryMap = {
+        '1_SessionNotes': 'Session Notes',
+        '2_Locations': 'Locations', 
+        '3_Characters': 'Characters',
+        '4_Items': 'Items',
+        '5_Concepts': 'Concepts',
+        '7_Quests': 'Quests'
+    };
+    
+    return categoryMap[folder] || 'Other';
 }
 
 function parseYamlFrontmatter(content) {
@@ -217,11 +249,35 @@ function processMarkdownFile(filePath, relativePath) {
     // Create full HTML page
     const title = path.basename(filePath, '.md');
     
+    // Add to search index
+    const textContent = extractTextFromHtml(htmlContent);
+    const searchItem = {
+        title: title,
+        path: relativePath,
+        category: getCategoryFromPath(relativePath),
+        content: textContent,
+        frontmatter: frontmatter || {}
+    };
+    
+    // Add aliases and tags for better searchability
+    if (frontmatter) {
+        if (frontmatter.aliases) {
+            searchItem.aliases = Array.isArray(frontmatter.aliases) ? frontmatter.aliases : [frontmatter.aliases];
+        }
+        if (frontmatter.tags) {
+            searchItem.tags = Array.isArray(frontmatter.tags) ? frontmatter.tags : [frontmatter.tags];
+        }
+    }
+    
+    searchIndex.push(searchItem);
+    
     // Calculate depth for CSS path and navigation links
     const currentDir = path.dirname(relativePath);
     const depth = currentDir === '.' ? 0 : currentDir.split('/').length;
     const cssPath = depth === 0 ? 'styles.css' : '../'.repeat(depth) + 'styles.css';
     const basePath = depth === 0 ? '' : '../'.repeat(depth);
+    
+    const jsPath = depth === 0 ? 'search.js' : '../'.repeat(depth) + 'search.js';
     
     const fullHtml = `<!DOCTYPE html>
 <html lang="en">
@@ -252,6 +308,7 @@ function processMarkdownFile(filePath, relativePath) {
             ${htmlContent}
         </article>
     </main>
+    <script src="${jsPath}"></script>
 </body>
 </html>`;
     
@@ -263,6 +320,7 @@ function createIndexPage(folderName, files, subdirectories = [], depth = 1) {
     const title = folderName.replace(/^\d+_/, '').replace(/_/g, ' ');
     const cssPath = depth === 0 ? 'styles.css' : '../'.repeat(depth) + 'styles.css';
     const basePath = depth === 0 ? '' : '../'.repeat(depth);
+    const jsPath = depth === 0 ? 'search.js' : '../'.repeat(depth) + 'search.js';
     
     const fileList = files
         .filter(file => file.endsWith('.md'))
@@ -324,6 +382,7 @@ function createIndexPage(folderName, files, subdirectories = [], depth = 1) {
             ${combinedList}
         </ul>
     </main>
+    <script src="${jsPath}"></script>
 </body>
 </html>`;
 }
@@ -444,6 +503,7 @@ function createMainIndex() {
             </a>
         </div>
     </main>
+    <script src="search.js"></script>
 </body>
 </html>`;
     
@@ -462,6 +522,31 @@ function createCSS() {
     }
 }
 
+function createSearchJS() {
+    const jsSource = path.join(__dirname, 'src', 'search.js');
+    const jsOutput = path.join(OUTPUT_DIR, 'search.js');
+    
+    if (fs.existsSync(jsSource)) {
+        fs.copyFileSync(jsSource, jsOutput);
+        console.log('Copied search.js from src/search.js to docs/search.js');
+    } else {
+        console.warn('Warning: src/search.js not found');
+    }
+}
+
+function createSearchIndex() {
+    const searchIndexPath = path.join(OUTPUT_DIR, 'search-index.json');
+    
+    // Optimize search index by truncating long content
+    const optimizedIndex = searchIndex.map(item => ({
+        ...item,
+        content: item.content.length > 500 ? item.content.substring(0, 500) + '...' : item.content
+    }));
+    
+    fs.writeFileSync(searchIndexPath, JSON.stringify(optimizedIndex, null, 2));
+    console.log(`Generated search index with ${searchIndex.length} items`);
+}
+
 function build() {
     console.log('Starting build process...');
     
@@ -470,6 +555,9 @@ function build() {
         fs.rmSync(OUTPUT_DIR, { recursive: true });
     }
     ensureDir(OUTPUT_DIR);
+    
+    // Clear search index
+    searchIndex = [];
     
     // Build file map first for link resolution
     console.log('Building file map for link resolution...');
@@ -489,6 +577,8 @@ function build() {
     // Create main files
     createMainIndex();
     createCSS();
+    createSearchJS();
+    createSearchIndex();
     
     console.log('Build complete! Website generated in docs/ folder');
     console.log('Ready for GitHub Pages deployment');
