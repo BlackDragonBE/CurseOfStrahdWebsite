@@ -91,6 +91,22 @@ Each page uses consistent navigation with links to all main sections. The build 
 - Main homepage with section overview cards (using `templates/main-index.js`)
 - Single CSS file with responsive design
 
+### Client-Side Features
+
+**Search System (`docs/search.js`):**
+- Global search across all content with fuzzy matching
+- Real-time results with keyboard navigation (Ctrl+K shortcut)
+- Searches titles, aliases, tags, content, and categories with weighted scoring
+- Debounced input with caching for performance
+
+**Hover Preview System (`docs/search.js`):**
+- Shows content previews when hovering over internal links (`.html` files)
+- 500ms delay before showing, 300ms delay before hiding
+- Fetches and caches page content dynamically
+- Automatically disabled on mobile/touch devices via `@media (hover: none)` CSS query
+- Positions previews intelligently to stay within viewport bounds
+- Extracts article content and converts relative URLs to absolute for proper display
+
 ## Deployment
 
 **GitHub Actions:** Automatic deployment on push to `main` branch via `.github/workflows/deploy.yml`
