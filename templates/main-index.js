@@ -10,7 +10,8 @@ function renderMainIndexTemplate(foldersWithContent = {}) {
         { folder: '3_Characters', title: 'Characters' },
         { folder: '4_Items', title: 'Items' },
         { folder: '5_Concepts', title: 'Concepts' },
-        { folder: '7_Quests', title: 'Quests' }
+        { folder: '7_Quests', title: 'Quests' },
+        { folder: '8_Custom', title: 'Custom' }
     ].filter(section => foldersWithContent[section.folder] !== false);
 
     const navItems = sections.map(section => 

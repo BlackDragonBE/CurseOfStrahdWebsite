@@ -18,6 +18,7 @@ const FOLDERS_TO_COPY = [
     '4_Items',
     '5_Concepts',
     '7_Quests',
+    '8_Custom',
     '_images'
 ];
 

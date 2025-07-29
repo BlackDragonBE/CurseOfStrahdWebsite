@@ -1186,5 +1186,12 @@
     "category": "Quests",
     "content": "Volgens Mary is haar dochter Gertruda meegenomen door Strahd . Ze wilt dat we haar terugbrengen naar haar thuis in Barovia .",
     "frontmatter": {}
+  },
+  {
+    "title": "Feylost",
+    "path": "8_Custom/Background/Feylost.html",
+    "category": "Other",
+    "content": "You grew up in the Feywild after disappearing from your home plane as a child. Perhaps you were spirited away by kindly Fey who thought you were destined for great things. Perhaps you stumbled through a Fey crossing by chance during a twilight stroll in the woods. Perhaps you were kidnapped by evil Fey but escaped from their clutches. Whatever the manner of your disappearance, you gradually fell under the Feywild&#39;s spell and learned a little about the nature of the mercurial tricksters that ...",
+    "frontmatter": {}
   }
 ]
