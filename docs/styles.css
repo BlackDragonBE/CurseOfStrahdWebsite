@@ -861,6 +861,13 @@ select:focus {
   transform: translateY(10px);
 }
 
+/* Disable hover preview on mobile/touch devices */
+@media (hover: none) {
+  .preview-popup {
+    display: none !important;
+  }
+}
+
 .preview-popup.visible {
   display: block;
   pointer-events: auto;
