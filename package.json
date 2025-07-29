@@ -5,8 +5,9 @@
   "main": "build.js",
   "scripts": {
     "build": "node build.js",
-    "start": "npm run build && npx http-server docs -p 3000",
-    "dev": "node dev-server.js"
+    "start": "npm run build && npx live-server docs --port=3000 --no-browser",
+    "dev": "node dev-server-live.js",
+    "dev-vite": "vite"
   },
   "dependencies": {
     "marked": "^4.3.0"
@@ -14,6 +15,8 @@
   "devDependencies": {
     "chokidar": "^4.0.3",
     "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "vite": "^7.0.6",
     "ws": "^8.18.3"
   },
   "keywords": [
