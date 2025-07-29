@@ -416,13 +416,15 @@ article {
   list-style: none;
   padding: 0;
   margin: var(--space-xl) 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
 }
 
 .file-list li {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-secondary);
   border-radius: var(--radius-md);
-  margin-bottom: var(--space-sm);
   transition: all 0.2s ease;
   overflow: hidden;
 }
@@ -430,7 +432,7 @@ article {
 .file-list li:hover {
   border-color: var(--border-hover);
   background: var(--bg-hover);
-  transform: translateX(4px);
+  transform: translateY(-2px);
 }
 
 .file-list a {
@@ -685,6 +687,10 @@ hr {
   .property-key {
     margin-right: 0;
     margin-bottom: 2px;
+  }
+  
+  .file-list {
+    grid-template-columns: 1fr;
   }
 }
 
