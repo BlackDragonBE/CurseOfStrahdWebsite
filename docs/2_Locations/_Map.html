@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>_Map - Curse of Strahd Campaign</title>
+    <title>Barovia Map - Curse of Strahd Campaign</title>
     <link rel="preload" href="../images/background.jpeg" as="image">
     <style>
         body { 
@@ -34,27 +34,328 @@
     </nav>
     <main>
         <article>
-            <h1>_Map</h1>
+            <h1>Barovia Map</h1>
             <div class="note-properties">
         <ul class="properties-list">
             <li><span class="property-key">ObsidianUIMode:</span> <span class="property-value">preview</span></li>
         </ul>
     </div>
-            <pre><code class="language-leaflet">id: leaflet-map
-image: [Barovia.jpg](../barovia.jpg.html)
-height: 800px
-lat: 50
-long: 50
-minZoom: 4
-maxZoom: 7
-defaultZoom: 4
-</code></pre>
-<pre><code class="language-dataview">TABLE WITHOUT ID
-file.link AS &quot;Locatie&quot;
-FROM &quot;2_Locations&quot;
-SORT file.link
-</code></pre>
-
+            
+        <style>
+            #map {
+                width: 100%;
+                height: 800px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+            }
+        </style>
+        
+        <div id="map"></div>
+        
+        <!-- Leaflet CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        
+        <script>
+            // Image dimensions (from Barovia.jpg)
+            const imageWidth = 5025;
+            const imageHeight = 3225;
+            
+            // Create the map with CRS.Simple for pixel coordinates
+            const map = L.map('map', {
+                crs: L.CRS.Simple,
+                minZoom: -2,
+                maxZoom: 3
+            });
+            
+            // Define the image bounds in pixel coordinates
+            const bounds = [[0, 0], [imageHeight, imageWidth]];
+            
+            // Add the image overlay
+            L.imageOverlay('../images/Barovia.jpg', bounds).addTo(map);
+            
+            // Fit the map view to show the entire image
+            map.fitBounds(bounds);
+            
+            // Marker icons configuration
+            const markerIcons = {
+          "danger": {
+                    "iconName": "skull",
+                    "color": "#ff3838",
+                    "size": 6
+          },
+          "sleep": {
+                    "iconName": "bed",
+                    "color": "#7d7aff",
+                    "size": 6
+          },
+          "city": {
+                    "iconName": "city",
+                    "color": "#ffee80",
+                    "size": 6
+          },
+          "question": {
+                    "iconName": "question",
+                    "color": "#b861ff",
+                    "size": 6
+          },
+          "current": {
+                    "iconName": "star",
+                    "color": "#ff810a",
+                    "size": 6
+          },
+          "default": {
+                    "iconName": "map-marker",
+                    "color": "#dddddd",
+                    "size": 6
+          }
+};
+            
+            // Add custom CSS for marker icons first
+            const style = document.createElement('style');
+            style.textContent = `
+                .custom-div-icon {
+                    background: none !important;
+                    border: none !important;
+                }
+                .custom-div-icon i {
+                    color: #dddddd;
+                    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+                    font-size: 18px;
+                }
+                ` + Object.entries(markerIcons).map(([type, config]) => `
+                .marker-${type} i {
+                    color: ${config.color} !important;
+                }
+                `).join('');
+            document.head.appendChild(style);
+            
+            // Function to create custom icons
+            function createCustomIcon(type) {
+                const iconConfig = markerIcons[type] || markerIcons['default'];
+                return L.divIcon({
+                    html: '<i class="fas fa-' + iconConfig.iconName + '"></i>',
+                    iconSize: [iconConfig.size * 4, iconConfig.size * 4],
+                    className: 'custom-div-icon marker-' + type,
+                    iconAnchor: [iconConfig.size * 2, iconConfig.size * 4]
+                });
+            }
+            
+            // Add markers
+            const markers = [
+          {
+                    "id": "ID_ab48cad988fb",
+                    "type": "city",
+                    "loc": [
+                              -16.828125,
+                              31.515625
+                    ],
+                    "link": "Vallaki",
+                    "description": "",
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_8a980b49cbba",
+                    "type": "city",
+                    "loc": [
+                              -31.359375,
+                              62.203125
+                    ],
+                    "link": "Barovia (dorp)",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_ca8bd9d839bb",
+                    "type": "default",
+                    "loc": [
+                              -31.875,
+                              53.09375
+                    ],
+                    "link": "Tser Pool",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_e80af91aca49",
+                    "type": "city",
+                    "loc": [
+                              -15.2373046875,
+                              9.03125
+                    ],
+                    "link": "Krezk",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_189a1b8908fa",
+                    "type": "default",
+                    "loc": [
+                              -12.7216796875,
+                              33.859375
+                    ],
+                    "link": "Lake Zarovich",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_0a19198beafb",
+                    "type": "danger",
+                    "loc": [
+                              -25.7841796875,
+                              56.125
+                    ],
+                    "link": "Castle Ravenloft",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_8b7a4abacb8a",
+                    "type": "danger",
+                    "loc": [
+                              -42.1875,
+                              27.12498298393684
+                    ],
+                    "link": "Amber Temple",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_1be8aa29dada",
+                    "type": "danger",
+                    "loc": [
+                              -13.26708984375,
+                              11.688304008984481
+                    ],
+                    "link": "Abdij van Markovia",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_0a69da4b1919",
+                    "type": "sleep",
+                    "loc": [
+                              -23.4716796875,
+                              8.907019976858159
+                    ],
+                    "link": "Wijngaard",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_6a2a3a7839a9",
+                    "type": "danger",
+                    "loc": [
+                              -30.76708984375,
+                              26.08834527293765
+                    ],
+                    "link": "Hut van Baba Lysaga",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_cb4b1bbb3ab8",
+                    "type": "danger",
+                    "loc": [
+                              -24.46240234375,
+                              26.002443932071877
+                    ],
+                    "link": "Argynvostholt",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_a94b4bf8f9ea",
+                    "type": "danger",
+                    "loc": [
+                              -20.8984375,
+                              38.77341410291315
+                    ],
+                    "link": "Windmolen",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_69ab5878a86b",
+                    "type": "danger",
+                    "loc": [
+                              -39.1875,
+                              23.406313810236863
+                    ],
+                    "link": "Tsolenka Pass",
+                    "description": null,
+                    "tooltip": "always"
+          },
+          {
+                    "id": "ID_789a5bb9f93b",
+                    "type": "default",
+                    "loc": [
+                              -0.0078125,
+                              0.0076763714946910255
+                    ],
+                    "description": "Top Left",
+                    "tooltip": "hover"
+          },
+          {
+                    "id": "ID_5bf89b889979",
+                    "type": "default",
+                    "loc": [
+                              -0.015625,
+                              78.49219175401579
+                    ],
+                    "description": "Top Right",
+                    "tooltip": "hover"
+          },
+          {
+                    "id": "ID_394b5b6bab99",
+                    "type": "default",
+                    "loc": [
+                              -50.36865234375,
+                              78.50905254560305
+                    ],
+                    "description": "Bottom Right",
+                    "tooltip": "hover"
+          },
+          {
+                    "id": "ID_8af8a9a839c8",
+                    "type": "default",
+                    "loc": [
+                              -50.3671875,
+                              0.007808245984207929
+                    ],
+                    "description": "Bottom Left",
+                    "tooltip": "hover"
+          }
+];
+            
+            markers.forEach(markerData => {
+                const [lat, lng] = markerData.loc;
+                const marker = L.marker([lat, lng], {
+                    icon: createCustomIcon(markerData.type)
+                }).addTo(map);
+                
+                // Add popup with link if available
+                if (markerData.link) {
+                    const popupContent = markerData.description 
+                        ? '<strong>' + markerData.link + '</strong><br>' + markerData.description
+                        : '<strong>' + markerData.link + '</strong>';
+                    marker.bindPopup(popupContent);
+                }
+                
+                // Handle tooltip display
+                if (markerData.tooltip === 'always' && markerData.link) {
+                    marker.bindTooltip(markerData.link, { permanent: true });
+                } else if (markerData.tooltip === 'hover' && (markerData.link || markerData.description)) {
+                    marker.bindTooltip(markerData.link || markerData.description);
+                }
+            });
+        </script>
+        
+        <!-- Font Awesome for icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
         </article>
     </main>
     <script>

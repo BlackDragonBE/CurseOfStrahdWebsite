@@ -546,10 +546,10 @@
     "frontmatter": {}
   },
   {
-    "title": "_Map",
+    "title": "Barovia Map",
     "path": "2_Locations/_Map.html",
     "category": "Locations",
-    "content": "id: leaflet-map image: [Barovia.jpg](../barovia.jpg.html) height: 800px lat: 50 long: 50 minZoom: 4 maxZoom: 7 defaultZoom: 4 TABLE WITHOUT ID file.link AS \"Locatie\" FROM \"2_Locations\" SORT file.link",
+    "content": "Interactive map of Barovia with locations and markers",
     "frontmatter": {
       "obsidianUIMode": "preview"
     }
