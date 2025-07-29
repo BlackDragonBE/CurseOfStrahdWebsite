@@ -16,7 +16,7 @@ npm run build           # Generate complete website in docs/ folder
 npm start               # Build and serve locally on localhost:3000
 ```
 
-Claude Code should only run the `npm run build` command and check if the server is already running. If not, it should ask the user to run `npm run dev`.
+Claude Code should never run these commands. The build command is constantly running in the background, and the live server always active while developing.
 
 **Source Structure:**
 - Source files are in `../CurseOfStrahdNotes/` (external Obsidian vault)

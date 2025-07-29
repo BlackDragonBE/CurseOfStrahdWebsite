@@ -15,6 +15,7 @@ function renderIndexTemplate({ title, cssPath, basePath, jsPath, combinedList })
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} - Curse of Strahd Campaign</title>
+    <link rel="preload" href="${basePath}images/background.jpeg" as="image">
     <link rel="stylesheet" href="${cssPath}">
 </head>
 <body>
