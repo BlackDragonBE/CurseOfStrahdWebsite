@@ -57,17 +57,41 @@ class SearchEngine {
     
     getPathToRoot() {
         const currentPath = window.location.pathname;
-        const pathParts = currentPath.split('/').filter(part => part && part !== 'index.html');
         
-        // Count directory levels from root (excluding the HTML file itself)
-        let depth = 0;
-        for (const part of pathParts) {
-            if (!part.endsWith('.html')) {
-                depth++;
+        // For GitHub Pages, handle the repository path correctly
+        // Check if we're on GitHub Pages (contains username.github.io)
+        if (window.location.hostname.includes('github.io')) {
+            // Extract the repository name from the path
+            const pathParts = currentPath.split('/').filter(part => part);
+            
+            // If we're at the root (just the repo name), use relative path
+            if (pathParts.length <= 1) {
+                return './';
             }
+            
+            // Count how many levels deep we are from the repository root
+            let depth = pathParts.length - 1; // Subtract 1 for the repository name
+            
+            // If the last part is an HTML file, don't count it as a directory level
+            if (pathParts[pathParts.length - 1].endsWith('.html')) {
+                depth--;
+            }
+            
+            return depth > 0 ? '../'.repeat(depth) : './';
+        } else {
+            // Local development - original logic
+            const pathParts = currentPath.split('/').filter(part => part && part !== 'index.html');
+            
+            // Count directory levels from root (excluding the HTML file itself)
+            let depth = 0;
+            for (const part of pathParts) {
+                if (!part.endsWith('.html')) {
+                    depth++;
+                }
+            }
+            
+            return depth > 0 ? '../'.repeat(depth) : './';
         }
-        
-        return depth > 0 ? '../'.repeat(depth) : './';
     }
     
     createSearchUI() {
