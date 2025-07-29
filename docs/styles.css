@@ -79,7 +79,7 @@ body {
 nav {
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-primary);
-  padding: var(--space-md) 0;
+  padding: var(--space-sm) 0;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -281,15 +281,15 @@ nav a:focus {
 /* Main Content */
 main {
   max-width: 1200px;
-  margin: var(--space-2xl) auto;
-  padding: 0 var(--space-xl);
+  margin: var(--space-lg) auto;
+  padding: 0 var(--space-lg);
 }
 
 article {
   background: var(--bg-secondary);
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-lg);
-  padding: var(--space-2xl);
+  padding: var(--space-lg);
   box-shadow: var(--shadow-md);
 }
 
@@ -458,7 +458,6 @@ h1 {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: var(--space-2xl);
-  border-bottom: 1px solid var(--border-primary);
   padding-bottom: var(--space-lg);
 }
 

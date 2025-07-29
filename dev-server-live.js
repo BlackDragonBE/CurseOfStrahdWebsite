@@ -7,6 +7,17 @@ const SOURCE_DIR = path.join(__dirname, '..', 'CurseOfStrahdNotes');
 let liveServerProcess = null;
 let isBuilding = false;
 let buildQueued = false;
+let rebuildTimeout = null;
+
+function debouncedRebuild() {
+    // Clear any existing timeout
+    if (rebuildTimeout) {
+        clearTimeout(rebuildTimeout);
+    }
+    
+    // Set a new timeout to rebuild after a short delay
+    rebuildTimeout = setTimeout(rebuildSite, 300);
+}
 
 async function rebuildSite() {
     if (isBuilding) {
@@ -70,9 +81,17 @@ startLiveServer();
 // File watchers
 console.log('🔍 Setting up file watchers...');
 
-// Watch source files
+// Watch source files (markdown only - images rarely change during development)
 const sourceWatcher = chokidar.watch([
-    path.join(SOURCE_DIR, '**/*.md'),
+    path.join(SOURCE_DIR, '**/*.md')
+], {
+    ignored: /node_modules/,
+    persistent: true,
+    ignoreInitial: true
+});
+
+// Separate watcher for images with longer debounce
+const imageWatcher = chokidar.watch([
     path.join(SOURCE_DIR, '_images/**/*')
 ], {
     ignored: /node_modules/,
@@ -91,28 +110,45 @@ const buildWatcher = chokidar.watch([
 
 sourceWatcher.on('change', (filePath) => {
     console.log(`📝 File changed: ${path.relative(SOURCE_DIR, filePath)}`);
-    rebuildSite();
+    debouncedRebuild();
 });
 
 sourceWatcher.on('add', (filePath) => {
     console.log(`➕ File added: ${path.relative(SOURCE_DIR, filePath)}`);
-    rebuildSite();
+    debouncedRebuild();
 });
 
 sourceWatcher.on('unlink', (filePath) => {
     console.log(`➖ File removed: ${path.relative(SOURCE_DIR, filePath)}`);
-    rebuildSite();
+    debouncedRebuild();
+});
+
+// Image watcher with longer debounce to avoid EBUSY errors
+imageWatcher.on('change', (filePath) => {
+    console.log(`🖼️  Image changed: ${path.relative(SOURCE_DIR, filePath)}`);
+    debouncedRebuild();
+});
+
+imageWatcher.on('add', (filePath) => {
+    console.log(`🖼️  Image added: ${path.relative(SOURCE_DIR, filePath)}`);
+    debouncedRebuild();
+});
+
+imageWatcher.on('unlink', (filePath) => {
+    console.log(`🖼️  Image removed: ${path.relative(SOURCE_DIR, filePath)}`);
+    debouncedRebuild();
 });
 
 buildWatcher.on('change', (filePath) => {
     console.log(`🔧 Build script changed: ${path.basename(filePath)}`);
-    rebuildSite();
+    debouncedRebuild();
 });
 
 console.log(`\n🌐 Development server will be available at http://localhost:3000`);
 console.log(`🔄 Live reload enabled - changes will auto-refresh the browser`);
 console.log(`👀 Watching for changes in:`);
-console.log(`   📝 Source files: ${path.relative(__dirname, SOURCE_DIR)}`);
+console.log(`   📝 Markdown files: ${path.relative(__dirname, SOURCE_DIR)}`);
+console.log(`   🖼️  Images: ${path.relative(__dirname, SOURCE_DIR)}_images/`);
 console.log(`   🔧 Build script: build.js`);
 console.log(`   🎨 CSS file: src/styles.css`);
 console.log('\nPress Ctrl+C to stop the server\n');
@@ -124,6 +160,7 @@ process.on('SIGINT', () => {
         liveServerProcess.kill('SIGTERM');
     }
     sourceWatcher.close();
+    imageWatcher.close();
     buildWatcher.close();
     process.exit(0);
 });
@@ -134,6 +171,7 @@ process.on('SIGTERM', () => {
         liveServerProcess.kill('SIGTERM');
     }
     sourceWatcher.close();
+    imageWatcher.close();
     buildWatcher.close();
     process.exit(0);
 });

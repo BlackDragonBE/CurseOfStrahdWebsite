@@ -17,6 +17,17 @@ function renderPageTemplate({ title, cssPath, basePath, jsPath, propertiesHtml, 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${title} - Curse of Strahd Campaign</title>
     <link rel="preload" href="${basePath}images/background.jpeg" as="image">
+    <style>
+        body { 
+            margin: 0; 
+            background: #0a0a0b; 
+            color: #ffffff; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', roboto, sans-serif;
+            opacity: 0;
+            transition: opacity 0.1s ease-in;
+        }
+        body.loaded { opacity: 1; }
+    </style>
     <link rel="stylesheet" href="${cssPath}">
 </head>
 <body>
@@ -40,6 +51,11 @@ function renderPageTemplate({ title, cssPath, basePath, jsPath, propertiesHtml, 
             ${htmlContent}
         </article>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
     <script src="${jsPath}"></script>
 </body>
 </html>`;
