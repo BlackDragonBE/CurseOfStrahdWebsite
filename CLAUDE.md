@@ -25,13 +25,35 @@ Claude Code should only run the `npm run build` command and check if the server 
 
 ## Architecture
 
-### Core Build Process (`build.js`)
+### Modular Build System
+
+The build system has been refactored into a modular architecture for better maintainability:
+
+**Main Entry Point (`build.js`):**
+- Orchestrates the build process (68 lines vs previous 591 lines)
+- Imports and coordinates all modules
+- Manages global search index
+
+**Templates (`templates/`):**
+- `page.js` - Individual content page template
+- `index.js` - Category index page template  
+- `main-index.js` - Homepage template
+- HTML templates separated from logic for easier editing
+
+**Library Modules (`lib/`):**
+- `fs-utils.js` - File system operations (directory creation, file copying)
+- `content-utils.js` - Content parsing (YAML frontmatter, HTML text extraction)
+- `markdown-processor.js` - Markdown processing and Obsidian link resolution
+- `search-utils.js` - Search index generation
+- `folder-processor.js` - Folder traversal and processing logic
+
+### Core Build Process
 
 The build system follows this pipeline:
 
 1. **File Mapping Phase:** Scans all markdown files to create a global filename → path mapping for link resolution
 2. **Content Processing:** Converts each category folder, handling nested directories and Obsidian link syntax  
-3. **HTML Generation:** Creates complete HTML pages with consistent navigation and styling
+3. **HTML Generation:** Creates complete HTML pages using modular templates with consistent navigation and styling
 4. **Asset Management:** Copies images and static CSS file
 
 ### Content Categories
@@ -53,17 +75,20 @@ The system processes these specific folders from the source vault:
 - Calculates relative paths between files in different folders
 - URL-encodes filenames with spaces (`Castle Ravenloft.html` → `Castle%20Ravenloft.html`)
 
-**Key Functions:**
-- `buildFileMap()` - Creates global file mapping for link resolution
-- `resolveObsidianLink()` - Handles various filename matching strategies  
-- `processMarkdownFile()` - Converts Obsidian syntax and generates HTML pages
+**Key Functions (now modularized):**
+- `buildFileMap()` (lib/markdown-processor.js) - Creates global file mapping for link resolution
+- `resolveObsidianLink()` (lib/markdown-processor.js) - Handles various filename matching strategies  
+- `processMarkdownFile()` (lib/markdown-processor.js) - Converts Obsidian syntax and generates HTML pages
+- `renderPageTemplate()` (templates/page.js) - Generates individual page HTML
+- `renderIndexTemplate()` (templates/index.js) - Generates category index HTML
+- `renderMainIndexTemplate()` (templates/main-index.js) - Generates homepage HTML
 
 ### HTML Template Structure
 
 Each page uses consistent navigation with links to all main sections. The build system generates:
-- Individual HTML files for each markdown file
-- Index pages for each category folder
-- Main homepage with section overview cards
+- Individual HTML files for each markdown file (using `templates/page.js`)
+- Index pages for each category folder (using `templates/index.js`)
+- Main homepage with section overview cards (using `templates/main-index.js`)
 - Single CSS file with responsive design
 
 ## Deployment
@@ -79,9 +104,11 @@ Each page uses consistent navigation with links to all main sections. The build 
 
 **When modifying the build system:**
 - Always test with `npm run build && npm start` 
-- The `FOLDERS_TO_COPY` array controls which source folders are processed
-- Navigation menus are hardcoded in three places: main page template, individual page template, and index page template
+- The `FOLDERS_TO_COPY` array in `build.js` controls which source folders are processed
+- Navigation menus are defined in the three template files: `templates/page.js`, `templates/index.js`, and `templates/main-index.js`
 - Link resolution depends on exact filename matching - changes to source file names may break internal links
+- HTML templates are now in separate files for easier editing - modify template files rather than inline strings
+- Each module has a specific purpose - follow the separation of concerns when adding features
 
 **Content Updates:**
 - Add new markdown files to appropriate category folders in source vault
