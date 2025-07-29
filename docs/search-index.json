@@ -1007,7 +1007,7 @@
     "title": "Genris",
     "path": "3_Characters/_Players/Genris.html",
     "category": "Characters",
-    "content": "Name: Genris Race: Firbolg Class: Druid",
+    "content": "Race: Firbolg Class: Druid",
     "frontmatter": {
       "npcStatus": "Player Character"
     }
@@ -1016,15 +1016,17 @@
     "title": "Glim",
     "path": "3_Characters/_Players/Glim.html",
     "category": "Characters",
-    "content": "Name: Glom \"Bok\" Race: Satyr Class: Warlock",
+    "content": "Name Race Class Background Glim \"Bok\" Satyr Warlock Feylost",
     "frontmatter": {
       "npcStatus": "Player Character",
       "aliases": [
-        "ik"
+        "ik",
+        "Glim"
       ]
     },
     "aliases": [
-      "ik"
+      "ik",
+      "Glim"
     ]
   },
   {
