@@ -291,6 +291,13 @@ article {
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
   box-shadow: var(--shadow-md);
+  overflow: hidden; /* Prevent floated images from spilling out */
+}
+
+article::after {
+  content: "";
+  display: table;
+  clear: both; /* Clear floats */
 }
 
 /* Section Grid */
