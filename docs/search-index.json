@@ -526,8 +526,17 @@
     "title": "Wijngaard",
     "path": "2_Locations/Wijngaard.html",
     "category": "Locations",
-    "content": "Naam: Tovenaar van de Wijn",
-    "frontmatter": {}
+    "content": "Tovenaar Van De Wijn Deze wijngaard is gelegen in de buurt van Krezk en was overrompeld door Firbolg toen we er voor de eerste keer kwamen. Davian Marticov is de oprichter, hij vertelde ons dat de heropstart van de huiswijn, Purple Grape Smash No 3 .",
+    "frontmatter": {
+      "aliases": [
+        "Tovenaar van de Wijn wijngaard",
+        "Wijngaard"
+      ]
+    },
+    "aliases": [
+      "Tovenaar van de Wijn wijngaard",
+      "Wijngaard"
+    ]
   },
   {
     "title": "Windmolen",
@@ -729,8 +738,10 @@
     "title": "Izmark",
     "path": "3_Characters/Izmark.html",
     "category": "Characters",
-    "content": "Broer van Ireena Kolyana , zoon van de burgemeester van Barovia (dorp) die begraven werd kort nadat we in Barovia toekwamen.",
-    "frontmatter": {}
+    "content": "Broer van Ireena Kolyana en zoon van de burgemeester van Barovia (dorp) die begraven werd kort nadat we in Barovia toekwamen. We vonden zijn lijk in de buurt van de Wijngaard . Hij was aangevallen door iets met scherpe klauwen. We bedekten zijn lijk met bladeren.",
+    "frontmatter": {
+      "npcStatus": "Dead"
+    }
   },
   {
     "title": "Kasimir",
@@ -1049,6 +1060,22 @@
     "frontmatter": {}
   },
   {
+    "title": "Purple Grape Smash No 3",
+    "path": "4_Items/Purple Grape Smash No 3.html",
+    "category": "Items",
+    "content": "De huiswijn van de Tovenaar van de Wijn wijngaard .",
+    "frontmatter": {
+      "aliases": [
+        "Purple Grape Smash",
+        "\"Purple Grape Smash #3\""
+      ]
+    },
+    "aliases": [
+      "Purple Grape Smash",
+      "\"Purple Grape Smash #3\""
+    ]
+  },
+  {
     "title": "Kaartlezing",
     "path": "5_Concepts/Kaartlezing.html",
     "category": "Concepts",
@@ -1142,6 +1169,13 @@
     "path": "7_Quests/Inactive/De schedel van Argynvost.html",
     "category": "Quests",
     "content": "We moeten de schedel van Argynvost vinden in \"het fort van de vijand\". Warschijnlijk het kasteel van Strahd . We moeten daarna de schedel terug in de crypte van Argynvost leggen, in Argynvostholt . Daarna zal Argynvost voor licht zorgen.",
+    "frontmatter": {}
+  },
+  {
+    "title": "Terra wordt moeilijk wakker",
+    "path": "7_Quests/Inactive/Terra wordt moeilijk wakker.html",
+    "category": "Quests",
+    "content": "Waarom wordt Terra altijd zo moeilijk wakker? Het lijkt zo sinds hij de Meat pies at. Of was het altijd al zo? Hij droomt ook intens.",
     "frontmatter": {}
   },
   {
