@@ -43,16 +43,56 @@ function build() {
     // Copy images
     copyImages(SOURCE_DIR, OUTPUT_DIR);
     
-    // Process each folder
+    // Process each folder and track which ones have content
+    const foldersWithContent = {};
+    
+    // First pass: determine which folders have content
     FOLDERS_TO_COPY.forEach(folder => {
         if (folder !== '_images') {
-            console.log(`Processing ${folder}...`);
-            processFolder(folder, SOURCE_DIR, OUTPUT_DIR, searchIndex);
+            const sourceFolder = path.join(SOURCE_DIR, folder);
+            if (fs.existsSync(sourceFolder)) {
+                const hasContent = hasMarkdownFiles(sourceFolder);
+                foldersWithContent[folder] = hasContent;
+            } else {
+                foldersWithContent[folder] = false;
+            }
         }
     });
     
+    // Second pass: process folders with content information available
+    FOLDERS_TO_COPY.forEach(folder => {
+        if (folder !== '_images') {
+            console.log(`Processing ${folder}...`);
+            processFolder(folder, SOURCE_DIR, OUTPUT_DIR, searchIndex, foldersWithContent);
+        }
+    });
+    
+    // Helper function to check if a folder contains markdown files
+    function hasMarkdownFiles(folderPath) {
+        try {
+            const items = fs.readdirSync(folderPath);
+            
+            for (const item of items) {
+                const itemPath = path.join(folderPath, item);
+                const stat = fs.statSync(itemPath);
+                
+                if (stat.isFile() && item.endsWith('.md')) {
+                    return true;
+                }
+                
+                if (stat.isDirectory() && hasMarkdownFiles(itemPath)) {
+                    return true;
+                }
+            }
+            
+            return false;
+        } catch (error) {
+            return false;
+        }
+    }
+    
     // Create main files
-    createMainIndex(OUTPUT_DIR);
+    createMainIndex(OUTPUT_DIR, foldersWithContent);
     createCSS(__dirname, OUTPUT_DIR);
     createSearchJS(__dirname, OUTPUT_DIR);
     copySrcImages(__dirname, OUTPUT_DIR);

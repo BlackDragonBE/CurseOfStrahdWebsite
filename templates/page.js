@@ -7,9 +7,23 @@
  * @param {string} options.jsPath - Relative path to search.js
  * @param {string} options.propertiesHtml - HTML for frontmatter properties
  * @param {string} options.htmlContent - Main content HTML
+ * @param {Object} options.foldersWithContent - Object mapping folder names to whether they have content
  * @returns {string} Complete HTML page
  */
-function renderPageTemplate({ title, cssPath, basePath, jsPath, propertiesHtml, htmlContent }) {
+function renderPageTemplate({ title, cssPath, basePath, jsPath, propertiesHtml, htmlContent, foldersWithContent = {} }) {
+    const sections = [
+        { folder: '1_SessionNotes', title: 'Session Notes' },
+        { folder: '2_Locations', title: 'Locations' },
+        { folder: '3_Characters', title: 'Characters' },
+        { folder: '4_Items', title: 'Items' },
+        { folder: '5_Concepts', title: 'Concepts' },
+        { folder: '7_Quests', title: 'Quests' }
+    ].filter(section => foldersWithContent[section.folder] !== false);
+
+    const navItems = sections.map(section => 
+        `<li><a href="${basePath}${section.folder}/index.html">${section.title}</a></li>`
+    ).join('\n                ');
+
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,12 +49,7 @@ function renderPageTemplate({ title, cssPath, basePath, jsPath, propertiesHtml, 
         <div class="nav-container">
             <h1><a href="${basePath}index.html">Curse of Strahd Campaign</a></h1>
             <ul>
-                <li><a href="${basePath}1_SessionNotes/index.html">Session Notes</a></li>
-                <li><a href="${basePath}2_Locations/index.html">Locations</a></li>
-                <li><a href="${basePath}3_Characters/index.html">Characters</a></li>
-                <li><a href="${basePath}4_Items/index.html">Items</a></li>
-                <li><a href="${basePath}5_Concepts/index.html">Concepts</a></li>
-                <li><a href="${basePath}7_Quests/index.html">Quests</a></li>
+                ${navItems}
             </ul>
         </div>
     </nav>

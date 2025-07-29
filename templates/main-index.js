@@ -1,8 +1,30 @@
 /**
  * Template for the main homepage
+ * @param {Object} foldersWithContent - Object mapping folder names to whether they have content
  * @returns {string} Complete HTML page
  */
-function renderMainIndexTemplate() {
+function renderMainIndexTemplate(foldersWithContent = {}) {
+    const sections = [
+        { folder: '1_SessionNotes', title: 'Session Notes' },
+        { folder: '2_Locations', title: 'Locations' },
+        { folder: '3_Characters', title: 'Characters' },
+        { folder: '4_Items', title: 'Items' },
+        { folder: '5_Concepts', title: 'Concepts' },
+        { folder: '7_Quests', title: 'Quests' }
+    ].filter(section => foldersWithContent[section.folder] !== false);
+
+    const navItems = sections.map(section => 
+        `<li><a href="${section.folder}/index.html">${section.title}</a></li>`
+    ).join('\n                ');
+
+    const sectionCards = sections.map(section => 
+        `<a href="${section.folder}/index.html" class="section-card-link">
+                <div class="section-card">
+                    <h2>${section.title}</h2>
+                </div>
+            </a>`
+    ).join('\n            ');
+
     return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,12 +50,7 @@ function renderMainIndexTemplate() {
         <div class="nav-container">
             <h1><a href="index.html">Curse of Strahd Campaign</a></h1>
             <ul>
-                <li><a href="1_SessionNotes/index.html">Session Notes</a></li>
-                <li><a href="2_Locations/index.html">Locations</a></li>
-                <li><a href="3_Characters/index.html">Characters</a></li>
-                <li><a href="4_Items/index.html">Items</a></li>
-                <li><a href="5_Concepts/index.html">Concepts</a></li>
-                <li><a href="7_Quests/index.html">Quests</a></li>
+                ${navItems}
             </ul>
         </div>
     </nav>
@@ -41,36 +58,7 @@ function renderMainIndexTemplate() {
         <h1>Curse of Strahd Campaign</h1>
         
         <div class="section-grid">
-            <a href="1_SessionNotes/index.html" class="section-card-link">
-                <div class="section-card">
-                    <h2>Session Notes</h2>
-                </div>
-            </a>
-            <a href="2_Locations/index.html" class="section-card-link">
-                <div class="section-card">
-                    <h2>Locations</h2>
-                </div>
-            </a>
-            <a href="3_Characters/index.html" class="section-card-link">
-                <div class="section-card">
-                    <h2>Characters</h2>
-                </div>
-            </a>
-            <a href="4_Items/index.html" class="section-card-link">
-                <div class="section-card">
-                    <h2>Items</h2>
-                </div>
-            </a>
-            <a href="5_Concepts/index.html" class="section-card-link">
-                <div class="section-card">
-                    <h2>Concepts</h2>
-                </div>
-            </a>
-            <a href="7_Quests/index.html" class="section-card-link">
-                <div class="section-card">
-                    <h2>Quests</h2>
-                </div>
-            </a>
+            ${sectionCards}
         </div>
     </main>
     <script>
