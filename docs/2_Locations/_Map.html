@@ -38,6 +38,8 @@
             <div class="note-properties">
         <ul class="properties-list">
             <li><span class="property-key">ObsidianUIMode:</span> <span class="property-value">preview</span></li>
+<li><span class="property-key">Aliases:</span> <span class="property-value">map, kaart</span></li>
+<li><span class="property-key">ObsidianEditingMode:</span> <span class="property-value">source</span></li>
         </ul>
     </div>
             
@@ -161,9 +163,10 @@
             const iconConfig = markerIcons[type] || markerIcons['default'];
             return L.divIcon({
                 html: '<i class="fas fa-' + iconConfig.iconName + '"></i>',
-                iconSize: [iconConfig.size * 4, iconConfig.size * 4],
+                iconSize: [iconConfig.size, iconConfig.size],
                 className: 'custom-div-icon marker-' + type,
-                iconAnchor: [iconConfig.size * 2, iconConfig.size * 4]
+                // Try centering the anchor point
+                iconAnchor: [iconConfig.size, -iconConfig.size]
             });
         }
         
@@ -173,8 +176,8 @@
                     "id": "ID_ab48cad988fb",
                     "type": "city",
                     "loc": [
-                              1810.5074626865671,
-                              1698.1162790697676
+                              2148,
+                              2017
                     ],
                     "link": "Vallaki",
                     "resolvedLinkPath": "../2_Locations/Vallaki.html",
@@ -185,8 +188,8 @@
                     "id": "ID_8a980b49cbba",
                     "type": "city",
                     "loc": [
-                              548.1044776119403,
-                              3145.6279069767443
+                              1218.9999999999998,
+                              3984
                     ],
                     "link": "Barovia (dorp)",
                     "resolvedLinkPath": "../2_Locations/Barovia%20(dorp).html",
@@ -197,8 +200,8 @@
                     "id": "ID_ca8bd9d839bb",
                     "type": "default",
                     "loc": [
-                              925.4776119402984,
-                              3195.4883720930234
+                              1187,
+                              3396.0000000000005
                     ],
                     "link": "Tser Pool",
                     "resolvedLinkPath": "../2_Locations/Tser%20Pool.html",
@@ -206,23 +209,11 @@
                     "tooltip": "always"
           },
           {
-                    "id": "ID_e80af91aca49",
-                    "type": "city",
-                    "loc": [
-                              0,
-                              2512.5
-                    ],
-                    "link": "Krezk",
-                    "resolvedLinkPath": "../2_Locations/Krezk.html",
-                    "description": null,
-                    "tooltip": "always"
-          },
-          {
                     "id": "ID_189a1b8908fa",
                     "type": "default",
                     "loc": [
-                              0,
-                              2512.5
+                              2417,
+                              2168
                     ],
                     "link": "Lake Zarovich",
                     "resolvedLinkPath": "../2_Locations/Lake%20Zarovich.html",
@@ -233,8 +224,8 @@
                     "id": "ID_0a19198beafb",
                     "type": "danger",
                     "loc": [
-                              799.6865671641791,
-                              2584.697674418605
+                              1578.9999999999998,
+                              3592
                     ],
                     "link": "Castle Ravenloft",
                     "resolvedLinkPath": "../2_Locations/Castle%20Ravenloft.html",
@@ -245,8 +236,8 @@
                     "id": "ID_8b7a4abacb8a",
                     "type": "danger",
                     "loc": [
-                              1990.8514451971018,
-                              4226.976744186047
+                              545,
+                              1730.5
                     ],
                     "link": "Amber Temple",
                     "resolvedLinkPath": "../2_Locations/Amber%20Temple.html",
@@ -257,8 +248,8 @@
                     "id": "ID_1be8aa29dada",
                     "type": "danger",
                     "loc": [
-                              0,
-                              2512.5
+                              2380.9999999999995,
+                              748
                     ],
                     "link": "Abdij van Markovia",
                     "resolvedLinkPath": "../2_Locations/Abdij%20van%20Markovia.html",
@@ -266,47 +257,11 @@
                     "tooltip": "always"
           },
           {
-                    "id": "ID_0a69da4b1919",
-                    "type": "sleep",
-                    "loc": [
-                              0,
-                              2512.5
-                    ],
-                    "link": "Wijngaard",
-                    "resolvedLinkPath": "../2_Locations/Wijngaard.html",
-                    "description": null,
-                    "tooltip": "always"
-          },
-          {
-                    "id": "ID_6a2a3a7839a9",
-                    "type": "danger",
-                    "loc": [
-                              0,
-                              2512.5
-                    ],
-                    "link": "Hut van Baba Lysaga",
-                    "resolvedLinkPath": "../2_Locations/Hut%20van%20Baba%20Lysaga.html",
-                    "description": null,
-                    "tooltip": "always"
-          },
-          {
-                    "id": "ID_cb4b1bbb3ab8",
-                    "type": "danger",
-                    "loc": [
-                              0,
-                              2512.5
-                    ],
-                    "link": "Argynvostholt",
-                    "resolvedLinkPath": "../2_Locations/Argynvostholt.html",
-                    "description": null,
-                    "tooltip": "always"
-          },
-          {
                     "id": "ID_a94b4bf8f9ea",
                     "type": "danger",
                     "loc": [
-                              1512.3964834146716,
-                              2104.0116279069766
+                              1887.4999999999998,
+                              2481.4985025864416
                     ],
                     "link": "Windmolen",
                     "resolvedLinkPath": "../2_Locations/Windmolen.html",
@@ -317,8 +272,8 @@
                     "id": "ID_69ab5878a86b",
                     "type": "danger",
                     "loc": [
-                              2143.594393943704,
-                              3927.813953488372
+                              717.0000000000001,
+                              1498.0040838551593
                     ],
                     "link": "Tsolenka Pass",
                     "resolvedLinkPath": "../2_Locations/Tsolenka%20Pass.html",
@@ -326,47 +281,51 @@
                     "tooltip": "always"
           },
           {
-                    "id": "ID_789a5bb9f93b",
-                    "type": "default",
+                    "id": "ID_1a5a5be9e928",
+                    "type": "city",
                     "loc": [
-                              3104.684695905173,
-                              20.77906976744186
+                              2243,
+                              574
                     ],
-                    "resolvedLinkPath": null,
-                    "description": "Top Left",
+                    "link": "Krezk",
+                    "resolvedLinkPath": "../2_Locations/Krezk.html",
+                    "description": "",
                     "tooltip": "always"
           },
           {
-                    "id": "ID_5bf89b889979",
-                    "type": "default",
+                    "id": "ID_9adb895859ea",
+                    "type": "danger",
                     "loc": [
-                              -119.03748816494719,
-                              21.558139534883722
+                              1256.9999999999998,
+                              1670
                     ],
-                    "resolvedLinkPath": null,
-                    "description": "Top Right",
+                    "link": "Hut van Baba Lysaga",
+                    "resolvedLinkPath": "../2_Locations/Hut%20van%20Baba%20Lysaga.html",
+                    "description": null,
                     "tooltip": "always"
           },
           {
-                    "id": "ID_394b5b6bab99",
-                    "type": "default",
+                    "id": "ID_aa5b4809ba08",
+                    "type": "danger",
                     "loc": [
-                              -109.08955223880591,
-                              5006.0465116279065
+                              1659.9999999999998,
+                              1665.4999999999998
                     ],
-                    "resolvedLinkPath": null,
-                    "description": "Bottom Right",
+                    "link": "Argynvostholt",
+                    "resolvedLinkPath": "../2_Locations/Argynvostholt.html",
+                    "description": null,
                     "tooltip": "always"
           },
           {
-                    "id": "ID_8af8a9a839c8",
-                    "type": "default",
+                    "id": "ID_a9eb2b4a4aea",
+                    "type": "sleep",
                     "loc": [
-                              3104.6792792097235,
-                              5042.662790697675
+                              1727.0000000000002,
+                              559
                     ],
-                    "resolvedLinkPath": null,
-                    "description": "Bottom Left",
+                    "link": "Wijngaard",
+                    "resolvedLinkPath": "../2_Locations/Wijngaard.html",
+                    "description": "",
                     "tooltip": "always"
           }
 ];
