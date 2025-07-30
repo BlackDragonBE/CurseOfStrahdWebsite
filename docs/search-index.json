@@ -393,7 +393,7 @@
     "title": "Amber Temple",
     "path": "2_Locations/Amber Temple.html",
     "category": "Locations",
-    "content": "De bron van de kracht van Strahd .",
+    "content": "De bron van de kracht van Strahd . Een tempel met sterke magie. Quest: De Amberen Tempel Reis Naar De Tempel De tempel ligt ver in het zuiden, voorbij de Tsolenka Pass . We reisden naar de tempel: 20_cos#Tocht Naar Amber Temple en moesten een berg beklimmen. De tempel werd bewaakt door vampieren die we moesten verslaan om binnen te geraken. In De Tempel De tempel is complex, met veel kamers en gangen. Er zijn verschillende brandende schedels die terug tot leven komen . Strahd wist dat we in de t...",
     "frontmatter": {
       "aliases": [
         "Amber Temple",
@@ -438,7 +438,7 @@
     "title": "Barovia",
     "path": "2_Locations/Barovia.html",
     "category": "Locations",
-    "content": "Het land waar we in verzeild geraakt, met Strahd als heerser. Zie Barovia (dorp) voor het dorp met dezelfde naam. Kaart: _Map",
+    "content": "Het land waar we in verzeild geraakt, met Strahd als heerser. Zie Barovia (dorp) .html) voor het dorp met dezelfde naam. Kaart: _Map",
     "frontmatter": {}
   },
   {
@@ -526,7 +526,7 @@
     "title": "Wijngaard",
     "path": "2_Locations/Wijngaard.html",
     "category": "Locations",
-    "content": "Tovenaar Van De Wijn Deze wijngaard is gelegen in de buurt van Krezk en was overrompeld door Firbolg toen we er voor de eerste keer kwamen. Davian Marticov is de oprichter, hij vertelde ons dat de heropstart van de huiswijn, Purple Grape Smash No 3 .",
+    "content": "! right|600 Tovenaar Van De Wijn Deze wijngaard is gelegen in de buurt van Krezk en was overrompeld door Firbolg toen we er voor de eerste keer kwamen. Davian Marticov is de oprichter, hij vertelde ons dat de heropstart van de huiswijn, Purple Grape Smash No 3 .",
     "frontmatter": {
       "aliases": [
         "Tovenaar van de Wijn wijngaard",
@@ -567,7 +567,7 @@
     "title": "Abt",
     "path": "3_Characters/Abt.html",
     "category": "Characters",
-    "content": "Locatie: Abdij van Markovia Ware gedaante niet gekend, is al heel oud, ziet eruit als een oude man Zoekt achter een manier om de vervloekte mensen in de abdij te helpen",
+    "content": "! right|400 Locatie: Abdij van Markovia Ware gedaante niet gekend, is al heel oud, ziet eruit als een oude man Zoekt achter een manier om de vervloekte mensen in de abdij te helpen",
     "frontmatter": {
       "npcStatus": "Alive",
       "npcProperties": "[]"
@@ -657,7 +657,7 @@
     "title": "Doru",
     "path": "3_Characters/Doru.html",
     "category": "Characters",
-    "content": "De zoon van de priester van Barovia , Vader Donavich . Hij is een vampier die ontsnapte tijdens ons verblijf in Barovia . Locatie: Ravenloft ? Laatst gezien in Vallaki : 13_cos#Vallaki Huis Vd Burgemeester Doru werkt voor Strahd als dienaar. Genris wilt Doru nog steeds dood.",
+    "content": "De zoon van de priester van Barovia .html), Vader Donavich . Hij is een vampier die ontsnapte tijdens ons verblijf in Barovia .html). Locatie: Ravenloft ? Laatst gezien in Vallaki : 13_cos#Vallaki Huis Vd Burgemeester Doru werkt voor Strahd als dienaar. Genris wilt Doru nog steeds dood.",
     "frontmatter": {
       "npcProperties": [
         "\"[[Strahd von Zarovich|Strahd]]\""
@@ -747,7 +747,7 @@
     "title": "Izmark",
     "path": "3_Characters/Izmark.html",
     "category": "Characters",
-    "content": "Broer van Ireena Kolyana en zoon van de burgemeester van Barovia (dorp) die begraven werd kort nadat we in Barovia toekwamen. We vonden zijn lijk in de buurt van de Wijngaard . Hij was aangevallen door iets met scherpe klauwen. We bedekten zijn lijk met bladeren.",
+    "content": "Broer van Ireena Kolyana en zoon van de burgemeester van Barovia (dorp) .html) die begraven werd kort nadat we in Barovia toekwamen. We vonden zijn lijk in de buurt van de Wijngaard . Hij was aangevallen door iets met scherpe klauwen. We bedekten zijn lijk met bladeren.",
     "frontmatter": {
       "npcStatus": "Dead"
     }
@@ -756,14 +756,14 @@
     "title": "Kasimir",
     "path": "3_Characters/Kasimir.html",
     "category": "Characters",
-    "content": "Een Dusk elf wizard die zijn zus wilt redden. Woont in het Vistani Camp . Zijn zus is opgesloten in de kerker van kasteel Ravenloft. Zij dacht dat de duivel een goeie man was. Heeft magische ring tegen kou Kan sterke magie, onder andere Fireball en Invisibility Wil naar de Amber Temple . Zijn zus wordt vastgehouden door Strahd von Zarovich , hij wilt er info zoeken om haar te helpen. We zijn samen met Kasimir naar de Amber Temple gereisd.",
+    "content": "Een Dusk elf wizard die zijn zus wilt redden. Woont in het Vistani Camp . Zijn zus is opgesloten in de kerker van kasteel Ravenloft. Zij dacht dat de duivel een goeie man was. Heeft magische ring tegen kou Kan sterke magie, onder andere Fireball en Invisibility Wil naar de Amber Temple . Zijn zus wordt vastgehouden door Strahd von Zarovich , hij wilt er info zoeken om haar te helpen. We zijn samen met Kasimir naar de Amber Temple gereisd. Kasimir stierf, maar werd terug tot leven gewekt door Nio...",
     "frontmatter": {}
   },
   {
     "title": "Kolian Idigrovich",
     "path": "3_Characters/Kolian Idigrovich.html",
     "category": "Characters",
-    "content": "Overleden ex-burgemeester van Barovia , vader van Izmark .",
+    "content": "Overleden ex-burgemeester van Barovia .html), vader van Izmark .",
     "frontmatter": {
       "tags": [
         "npc"
@@ -790,7 +790,7 @@
     "title": "Mary",
     "path": "3_Characters/Mary.html",
     "category": "Characters",
-    "content": "Een vrouw die in Barovia woont. Moeder van Gertruda . Ze was aan het wenen met een pop vast Ze zegt dat haar dochter Gertruda ontsnapt is, door de duivel meegenomen Volgens buren weent ze heel de dag",
+    "content": "Een vrouw die in Barovia .html) woont. Moeder van Gertruda . Ze was aan het wenen met een pop vast Ze zegt dat haar dochter Gertruda ontsnapt is, door de duivel meegenomen Volgens buren weent ze heel de dag",
     "frontmatter": {}
   },
   {
@@ -812,7 +812,7 @@
     "title": "Oleg Lansen",
     "path": "3_Characters/Oleg Lansen.html",
     "category": "Characters",
-    "content": "De oudste man in Krezk . Hij was aangetrokken tot de crossdresser vorm van Glim tijdens en na het optreden voor het circus. Oleg stierf tijdens een gevecht tegen Erevan Corvus buiten de circustent van Rictavio .",
+    "content": "! right|400 De oudste man in Krezk . Hij was aangetrokken tot de crossdresser vorm van Glim tijdens en na het optreden voor het circus. Oleg stierf tijdens een gevecht tegen Erevan Corvus buiten de circustent van Rictavio .",
     "frontmatter": {
       "tags": [
         "npc"
@@ -877,7 +877,7 @@
     "title": "Strahd von Zarovich",
     "path": "3_Characters/Strahd von Zarovich.html",
     "category": "Characters",
-    "content": "De heerser over Barovia en een krachtige vampier. Hij woont in Castle Ravenloft . Hij heeft talloze krachten, die hij waarschijnlijk heeft gehaald uit de Amber Temple .",
+    "content": "! right|600 De heerser over Barovia en een krachtige vampier. Hij woont in Castle Ravenloft . Hij heeft talloze krachten, die hij waarschijnlijk heeft gehaald uit de Amber Temple .",
     "frontmatter": {
       "aliases": [
         "Strahd",
@@ -931,7 +931,7 @@
     "title": "Arawai",
     "path": "3_Characters/_Deity/Arawai.html",
     "category": "Characters",
-    "content": "Arawai is de godin van leven en de natuur. Niobe aanbidt haar.",
+    "content": "! right|200 Arawai is de godin van leven en de natuur. Niobe aanbidt haar.",
     "frontmatter": {
       "obsidianUIMode": "preview",
       "npcStatus": "Deity"
@@ -998,7 +998,7 @@
     "title": "De party",
     "path": "3_Characters/_Players/De party.html",
     "category": "Characters",
-    "content": "Leden: Genris Glim Niobe Terra",
+    "content": "Leden: Genris Glim Niobe Terra ! center|1000 ! center|1000",
     "frontmatter": {
       "aliases": [
         "de party",
@@ -1016,7 +1016,7 @@
     "title": "Genris",
     "path": "3_Characters/_Players/Genris.html",
     "category": "Characters",
-    "content": "Race: Firbolg Class: Druid",
+    "content": "! |400 Race: Firbolg Class: Druid",
     "frontmatter": {
       "npcStatus": "Player Character"
     }
@@ -1025,7 +1025,7 @@
     "title": "Glim",
     "path": "3_Characters/_Players/Glim.html",
     "category": "Characters",
-    "content": "Name Race Class Background Glim \"Bok\" Satyr Warlock ( The Hexblade ) Feylost",
+    "content": "! |400 Name Race Class Background Glim \"Bok\" Satyr Warlock ( The Hexblade ) Feylost Kenmerken Zijn vacht ruikt naar honing Heeft grote hoorns, en koe-achtige oren Een zwarte tattoo in de vorm van een raaf op zijn voorhoofd Behaarde geitenpoten en hoeven Een liefde voor ondeugd, waaronder alcohol en... andere dingen Een interesse in alles wat magisch is Natuurlijk nieuwsgierig Een affiniteit met de \"regel van drie\", die overal in het multiversum terugkomt. Het is ook de sterke band die hij had me...",
     "frontmatter": {
       "npcStatus": "Player Character",
       "aliases": [
@@ -1042,7 +1042,7 @@
     "title": "Niobe",
     "path": "3_Characters/_Players/Niobe.html",
     "category": "Characters",
-    "content": "Name: Niobe Race: Tabaxi Class: Paladin",
+    "content": "! |400 Name: Niobe Race: Tabaxi Class: Paladin",
     "frontmatter": {
       "npcStatus": "Player Character"
     }
@@ -1051,7 +1051,7 @@
     "title": "Terra",
     "path": "3_Characters/_Players/Terra.html",
     "category": "Characters",
-    "content": "Name: Terra Race: Minotaur Class: Bard",
+    "content": "! |400 Name: Terra Race: Minotaur Class: Bard",
     "frontmatter": {
       "npcStatus": "Player Character"
     }
@@ -1097,7 +1097,7 @@
     "title": "Meat pies",
     "path": "5_Concepts/Meat pies.html",
     "category": "Concepts",
-    "content": "Eerste keer in Barovia gegeten door Glim . Genris en Terra Sinds Terra ervan at en KO ging, heeft hij vreemde dromen Worden gemaakt in een Windmolen . Heel verslavend",
+    "content": "Eerste keer in Barovia .html) gegeten door Glim . Genris en Terra Sinds Terra ervan at en KO ging, heeft hij vreemde dromen Worden gemaakt in een Windmolen . Heel verslavend",
     "frontmatter": {
       "aliases": [
         "Meat pies",
@@ -1169,6 +1169,20 @@
     ]
   },
   {
+    "title": "De abdij van Markovia",
+    "path": "7_Quests/In Progress/De abdij van Markovia.html",
+    "category": "Quests",
+    "content": "De abt van de Abdij is verdacht: Hij is veel ouder dan hij lijkt Zijn ware gedaante kennen we niet We vermoeden dat hij lijken steelt Er zijn 3 dienaars die niet volledig mens zijn: Otto, de half-wolf man Clovin, man met 2 hoofden, een klauw en een berenpoot Zygrvek: Vrouw, half gezicht hagedis, wat wolvenvacht, voor de rest vrouwelijk gezicht In de hal van de abdij hebben we een lichtzwaard gevonden. Terra gebruikt deze. Er is een weerwolf in Krezk , heeft dat iets te maken met de abdij?",
+    "frontmatter": {}
+  },
+  {
+    "title": "De Amberen Tempel",
+    "path": "7_Quests/In Progress/De Amberen Tempel.html",
+    "category": "Quests",
+    "content": "Info Rictavio heeft het over een Amber Temple waar er sterke magie is. De tempel is ver in het zuiden. Luvash is tegen een donkere elf bezig over de duivel, over een tempel. De zus van de elf is vast. De tempel is redelijk ver weg. We gaan naar binnen en praten met de elf, Kasimir . Zijn zus is opgesloten in de kerker van Ravenloft . Zij dacht dat Strahd een goeie man was. Kasimir is een “dusk elf”. Er is een tempel waar Strahd zijn vampier-krachten kreeg. Strahd heeft alle vrouwelijke elven ver...",
+    "frontmatter": {}
+  },
+  {
     "title": "De meat pies en de windmolen",
     "path": "7_Quests/Inactive/De meat pies en de windmolen.html",
     "category": "Quests",
@@ -1179,7 +1193,7 @@
     "title": "De schedel van Argynvost",
     "path": "7_Quests/Inactive/De schedel van Argynvost.html",
     "category": "Quests",
-    "content": "We moeten de schedel van Argynvost vinden in \"het fort van de vijand\". Warschijnlijk het kasteel van Strahd . We moeten daarna de schedel terug in de crypte van Argynvost leggen, in Argynvostholt . Daarna zal Argynvost voor licht zorgen.",
+    "content": "We moeten de schedel van Argynvost vinden in \"het fort van de vijand\". Warschijnlijk het kasteel van Strahd . We moeten daarna de schedel terug in de crypte van Argynvost leggen, in Argynvostholt . Daarna zal Argynvost voor licht zorgen. [!quote] Waterspuwer Wanneer de draak zijn droom droomt in zijn rechtmatig graf, dan zal het licht van Argynvost schijnen en het land in licht verhullen",
     "frontmatter": {}
   },
   {
@@ -1193,7 +1207,7 @@
     "title": "Vermiste dochter, meegenomen door Strahd",
     "path": "7_Quests/Inactive/Vermiste dochter, meegenomen door Strahd.html",
     "category": "Quests",
-    "content": "Volgens Mary is haar dochter Gertruda meegenomen door Strahd . Ze wilt dat we haar terugbrengen naar haar thuis in Barovia .",
+    "content": "Volgens Mary is haar dochter Gertruda meegenomen door Strahd . Ze wilt dat we haar terugbrengen naar haar thuis in Barovia .html).",
     "frontmatter": {}
   },
   {
