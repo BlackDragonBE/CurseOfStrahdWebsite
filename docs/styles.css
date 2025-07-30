@@ -840,9 +840,9 @@ select:focus {
   border: 1px solid var(--border-primary);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xl);
-  max-width: 400px;
-  max-height: 500px;
-  width: 400px;
+  max-width: 600px;
+  max-height: 600px;
+  width: 600px;
   padding: var(--space-lg);
   z-index: 1000;
   overflow: hidden;

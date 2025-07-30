@@ -667,8 +667,8 @@ class HoverPreview {
         const linkRect = link.getBoundingClientRect();
         const viewportWidth = window.innerWidth;
         const viewportHeight = window.innerHeight;
-        const previewWidth = 400;
-        const previewHeight = 500;
+        const previewWidth = 600;
+        const previewHeight = 600;
         const gap = 10;
         
         let left = linkRect.right + gap;
