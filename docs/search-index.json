@@ -526,7 +526,7 @@
     "title": "Wijngaard",
     "path": "2_Locations/Wijngaard.html",
     "category": "Locations",
-    "content": "! right|600 Tovenaar Van De Wijn Deze wijngaard is gelegen in de buurt van Krezk en was overrompeld door Firbolg toen we er voor de eerste keer kwamen. Davian Marticov is de oprichter, hij vertelde ons dat de heropstart van de huiswijn, Purple Grape Smash No 3 .",
+    "content": "Tovenaar Van De Wijn Deze wijngaard is gelegen in de buurt van Krezk en was overrompeld door Firbolg toen we er voor de eerste keer kwamen. Davian Marticov is de oprichter, hij vertelde ons dat de heropstart van de huiswijn, Purple Grape Smash No 3 .",
     "frontmatter": {
       "aliases": [
         "Tovenaar van de Wijn wijngaard",
@@ -567,7 +567,7 @@
     "title": "Abt",
     "path": "3_Characters/Abt.html",
     "category": "Characters",
-    "content": "! right|400 Locatie: Abdij van Markovia Ware gedaante niet gekend, is al heel oud, ziet eruit als een oude man Zoekt achter een manier om de vervloekte mensen in de abdij te helpen",
+    "content": "Locatie: Abdij van Markovia Ware gedaante niet gekend, is al heel oud, ziet eruit als een oude man Zoekt achter een manier om de vervloekte mensen in de abdij te helpen",
     "frontmatter": {
       "npcStatus": "Alive",
       "npcProperties": "[]"
@@ -812,7 +812,7 @@
     "title": "Oleg Lansen",
     "path": "3_Characters/Oleg Lansen.html",
     "category": "Characters",
-    "content": "! right|400 De oudste man in Krezk . Hij was aangetrokken tot de crossdresser vorm van Glim tijdens en na het optreden voor het circus. Oleg stierf tijdens een gevecht tegen Erevan Corvus buiten de circustent van Rictavio .",
+    "content": "De oudste man in Krezk . Hij was aangetrokken tot de crossdresser vorm van Glim tijdens en na het optreden voor het circus. Oleg stierf tijdens een gevecht tegen Erevan Corvus buiten de circustent van Rictavio .",
     "frontmatter": {
       "tags": [
         "npc"
@@ -877,7 +877,7 @@
     "title": "Strahd von Zarovich",
     "path": "3_Characters/Strahd von Zarovich.html",
     "category": "Characters",
-    "content": "! right|600 De heerser over Barovia en een krachtige vampier. Hij woont in Castle Ravenloft . Hij heeft talloze krachten, die hij waarschijnlijk heeft gehaald uit de Amber Temple .",
+    "content": "De heerser over Barovia en een krachtige vampier. Hij woont in Castle Ravenloft . Hij heeft talloze krachten, die hij waarschijnlijk heeft gehaald uit de Amber Temple .",
     "frontmatter": {
       "aliases": [
         "Strahd",
@@ -931,7 +931,7 @@
     "title": "Arawai",
     "path": "3_Characters/_Deity/Arawai.html",
     "category": "Characters",
-    "content": "! right|200 Arawai is de godin van leven en de natuur. Niobe aanbidt haar.",
+    "content": "Arawai is de godin van leven en de natuur. Niobe aanbidt haar.",
     "frontmatter": {
       "obsidianUIMode": "preview",
       "npcStatus": "Deity"
@@ -998,7 +998,7 @@
     "title": "De party",
     "path": "3_Characters/_Players/De party.html",
     "category": "Characters",
-    "content": "Leden: Genris Glim Niobe Terra ! center|1000 ! center|1000",
+    "content": "Leden: Genris Glim Niobe Terra",
     "frontmatter": {
       "aliases": [
         "de party",
@@ -1016,7 +1016,7 @@
     "title": "Genris",
     "path": "3_Characters/_Players/Genris.html",
     "category": "Characters",
-    "content": "! |400 Race: Firbolg Class: Druid",
+    "content": "Race: Firbolg Class: Druid",
     "frontmatter": {
       "npcStatus": "Player Character"
     }
@@ -1025,7 +1025,7 @@
     "title": "Glim",
     "path": "3_Characters/_Players/Glim.html",
     "category": "Characters",
-    "content": "! |400 Name Race Class Background Glim \"Bok\" Satyr Warlock ( The Hexblade ) Feylost Kenmerken Zijn vacht ruikt naar honing Heeft grote hoorns, en koe-achtige oren Een zwarte tattoo in de vorm van een raaf op zijn voorhoofd Behaarde geitenpoten en hoeven Een liefde voor ondeugd, waaronder alcohol en... andere dingen Een interesse in alles wat magisch is Natuurlijk nieuwsgierig Een affiniteit met de \"regel van drie\", die overal in het multiversum terugkomt. Het is ook de sterke band die hij had me...",
+    "content": "Name Race Class Background Glim \"Bok\" Satyr Warlock ( The Hexblade ) Feylost Kenmerken Zijn vacht ruikt naar honing Heeft grote hoorns, en koe-achtige oren Een zwarte tattoo in de vorm van een raaf op zijn voorhoofd Behaarde geitenpoten en hoeven Een liefde voor ondeugd, waaronder alcohol en... andere dingen Een interesse in alles wat magisch is Natuurlijk nieuwsgierig Een affiniteit met de \"regel van drie\", die overal in het multiversum terugkomt. Het is ook de sterke band die hij had met zijn ...",
     "frontmatter": {
       "npcStatus": "Player Character",
       "aliases": [
@@ -1042,7 +1042,7 @@
     "title": "Niobe",
     "path": "3_Characters/_Players/Niobe.html",
     "category": "Characters",
-    "content": "! |400 Name: Niobe Race: Tabaxi Class: Paladin",
+    "content": "Name: Niobe Race: Tabaxi Class: Paladin",
     "frontmatter": {
       "npcStatus": "Player Character"
     }
@@ -1051,7 +1051,7 @@
     "title": "Terra",
     "path": "3_Characters/_Players/Terra.html",
     "category": "Characters",
-    "content": "! |400 Name: Terra Race: Minotaur Class: Bard",
+    "content": "Name: Terra Race: Minotaur Class: Bard",
     "frontmatter": {
       "npcStatus": "Player Character"
     }
