@@ -19,7 +19,7 @@
     "title": "11_cos",
     "path": "1_SessionNotes/11_cos.html",
     "category": "Session Notes",
-    "content": "Wijngaard We rusten kort uit om te bespreken wat we gaan doen Terra praat met Davion. Strahd komt de champagne ophalen soms. Een van de firbolgs heeft hetzelfde kapsel dan Niobe. We gaan richting zuiden op zoek naar de firbolgs We komen aan een heuvel waar constant bliksem op inslaagt Heuvel We gaan de heuvel op, Genris gebruikt Detect Magic om te checken of er magie is. Boven staat een groot houten beeld met vier mensachtige wezens die knielen, samen met een enkele grote firbolg die een grote g...",
+    "content": "Wijngaard We rusten kort uit om te bespreken wat we gaan doen Terra praat met Davion . Strahd komt de champagne ophalen soms. Een van de firbolgs heeft hetzelfde kapsel dan Niobe. We gaan richting zuiden op zoek naar de firbolgs We komen aan een heuvel waar constant bliksem op inslaagt Heuvel We gaan de heuvel op, Genris gebruikt Detect Magic om te checken of er magie is. Boven staat een groot houten beeld met vier mensachtige wezens die knielen, samen met een enkele grote firbolg die een grote ...",
     "frontmatter": {
       "sessionDate": "2024-08-18",
       "startLocation": "\"[[Wijngaard]]\"",
@@ -519,7 +519,7 @@
     "title": "Vallaki",
     "path": "2_Locations/Vallaki.html",
     "category": "Locations",
-    "content": "Plaatsen Blue Water Inn Kerk Kerk in het westen met kerkhof Oude kerk, ingezakt, ramen gebarsten. Ijzeren hek er rond. Graven met lichte mist over. Boven altaar hangt een zon. Vader Lucian Petrovich . Kerk van St. Andral. Blacksmith Blacksmith: een man, sober gekleed, zwarte short, stevige baard Algemene Winkel Vrouw met lang blond haar in staart, sobere kleren Verkoop healing kits en olie onder andere Speelgoedwinkel Bord met speelgoedpaard, eronder B&B Slogan: “Is niet leuk, is niet Blinski” H...",
+    "content": "Plaatsen Blue Water Inn Kerk Kerk in het westen met kerkhof Oude kerk, ingezakt, ramen gebarsten. Ijzeren hek er rond. Graven met lichte mist over. Boven altaar hangt een zon. Vader Lucian Petrovich . Kerk van St. Andral. Blacksmith Blacksmith: een man, sober gekleed, zwarte short, stevige baard Algemene Winkel Vrouw met lang blond haar in staart, sobere kleren Verkoop healing kits en olie onder andere Speelgoedwinkel Bord met speelgoedpaard, eronder B&B Slogan: “Is niet leuk, is niet Blinski ” ...",
     "frontmatter": {}
   },
   {
@@ -533,7 +533,7 @@
     "title": "Wijngaard",
     "path": "2_Locations/Wijngaard.html",
     "category": "Locations",
-    "content": "Tovenaar Van De Wijn Deze wijngaard is gelegen in de buurt van Krezk en was overrompeld door Firbolg toen we er voor de eerste keer kwamen. Davian Marticov is de oprichter, hij vertelde ons dat de heropstart van de huiswijn, Purple Grape Smash No 3 .",
+    "content": "Tovenaar Van De Wijn Deze wijngaard is gelegen in de buurt van Krezk en was overrompeld door Firbolg toen we er voor de eerste keer kwamen. Davian Martikov is de oprichter, hij vertelde ons dat de heropstart van de huiswijn, Purple Grape Smash No 3 .",
     "frontmatter": {
       "aliases": [
         "Tovenaar van de Wijn wijngaard",
@@ -626,17 +626,26 @@
     ]
   },
   {
-    "title": "Blinski",
-    "path": "3_Characters/Blinski.html",
+    "title": "Blinsky",
+    "path": "3_Characters/Blinsky.html",
     "category": "Characters",
-    "content": "Eigenaar van de speelgoedwinkel in Vallaki . Is niet leuk, is niet Blinski!",
-    "frontmatter": {}
+    "content": "Eigenaar van de speelgoedwinkel in Vallaki . Is niet leuk, is niet Blinsky!",
+    "frontmatter": {
+      "aliases": [
+        "Blinsky",
+        "Blinski"
+      ]
+    },
+    "aliases": [
+      "Blinsky",
+      "Blinski"
+    ]
   },
   {
-    "title": "Davian Marticov",
-    "path": "3_Characters/Davian Marticov.html",
+    "title": "Davian Martikov",
+    "path": "3_Characters/Davian Martikov.html",
     "category": "Characters",
-    "content": "Oprichter van de Wijngaard . Vader van Urwin Marticov . Kan in een raaf veranderen en terug. Deel van de orde van de raven Quest: Ze maken nog andere wijn, daarvoor hebben ze 3 magische edelstenen nodig. 2 ervan zijn gestolen, 1 zijn door de Firbolgs, de andere is door Baba Lisaga meegenomen Als we de kristallen terug bezorgen, kunnen we maandelijks 4 tot 6 flessen wijn krijgen 1 edelsteen gegeven, ze kunnen al terug beginnen met Red Dragon Crush ze hebben ook nog gerief voor Purple Grape Smash ...",
+    "content": "Oprichter van de Wijngaard . Vader van Urwin Martikov . Kan in een raaf veranderen en terug. Deel van de orde van de raven Quest: Ze maken nog andere wijn, daarvoor hebben ze 3 magische edelstenen nodig. 2 ervan zijn gestolen, 1 zijn door de Firbolgs, de andere is door Baba Lisaga meegenomen Als we de kristallen terug bezorgen, kunnen we maandelijks 4 tot 6 flessen wijn krijgen 1 edelsteen gegeven, ze kunnen al terug beginnen met Red Dragon Crush ze hebben ook nog gerief voor Purple Grape Smash ...",
     "frontmatter": {
       "aliases": [
         "Davian",
@@ -851,7 +860,7 @@
     "title": "Rudolph van Richten",
     "path": "3_Characters/Rudolph van Richten.html",
     "category": "Characters",
-    "content": "Pseudoniem: Rictavio Locatie: Lake Baratok ? Oude man: netjes gekleed, eind 50, bruine leren kleding Ezmeralda &#39;s mentor Wil Strahd doden, heeft ons verteld over Amber Temple in het zuiden met sterke magie 100GP uitbetaling (25GP per persoon) Te vinden in zijn toren oosten, midden van Lake Baratok Vertrouwt alleen Ezmeralda",
+    "content": "Locatie: Lake Baratok ? Oude man: netjes gekleed, eind 50, bruine leren kleding Ezmeralda &#39;s mentor Wil Strahd doden, heeft ons verteld over Amber Temple in het zuiden met sterke magie 100GP uitbetaling (25GP per persoon) Te vinden in zijn toren oosten, midden van Lake Baratok Vertrouwt alleen Ezmeralda",
     "frontmatter": {
       "aliases": [
         "Rudolph"
@@ -903,10 +912,10 @@
     ]
   },
   {
-    "title": "Urwin Marticov",
-    "path": "3_Characters/Urwin Marticov.html",
+    "title": "Urwin Martikov",
+    "path": "3_Characters/Urwin Martikov.html",
     "category": "Characters",
-    "content": "Uitbater van de Vallaki#Blue Water Inn en leider van orde van de raven Zoon van Davian Marticov .",
+    "content": "Uitbater van de Vallaki#Blue Water Inn en leider van orde van de raven Zoon van Davian Martikov .",
     "frontmatter": {
       "aliases": [
         "Urwin"
@@ -937,7 +946,7 @@
     "title": "Arawai",
     "path": "3_Characters/_Deity/Arawai.html",
     "category": "Characters",
-    "content": "Arawai is de godin van leven en de natuur. Niobe aanbidt haar.",
+    "content": "Het symbool van Arawai: Arawai is de godin van leven en de natuur. Niobe aanbidt haar.",
     "frontmatter": {
       "obsidianUIMode": "preview",
       "npcStatus": "Deity"
@@ -1121,7 +1130,7 @@
     "title": "Orde van de Raven",
     "path": "5_Concepts/Orde van de Raven.html",
     "category": "Concepts",
-    "content": "Er is een orde van raven in Barovia . De leider is Urwin Marticov . We zien overal raven rondvliegen, overal waar we komen. Raven in het algemeen hebben een link met de Nachtmoeder Volgens Baba Lysaga hebben de raven een complot tegen Strahd",
+    "content": "Er is een orde van raven in Barovia . De leider is Urwin Martikov . We zien overal raven rondvliegen, overal waar we komen. Raven in het algemeen hebben een link met de Nachtmoeder Volgens Baba Lysaga hebben de raven een complot tegen Strahd",
     "frontmatter": {
       "aliases": [
         "raven in Barovia",
