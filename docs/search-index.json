@@ -626,12 +626,14 @@
     "frontmatter": {
       "aliases": [
         "Blinsky",
-        "Blinski"
+        "Blinski",
+        "speelgoedmaker"
       ]
     },
     "aliases": [
       "Blinsky",
-      "Blinski"
+      "Blinski",
+      "speelgoedmaker"
     ]
   },
   {
@@ -747,7 +749,7 @@
     "title": "Izek",
     "path": "3_Characters/Izek.html",
     "category": "Characters",
-    "content": "",
+    "content": "Een brute man met een demonische arm die voor de burgemeester van Vallaki werkte. We horen het eerst over hem in Vallaki . Blijkbaar was Udo Lucovich ongelukkig en werd die daarom gevangen genomen door izek. We verslaan Izek en onthoofden hem Glim nam een tijd zijn hoofd overal mee Izek heeft meer dan 150 porseleinen poppen van Ireena laten maken bij Blinsky , de speelgoedmaker.",
     "frontmatter": {
       "npcStatus": "Dead",
       "tags": [
@@ -812,7 +814,7 @@
     "title": "Max",
     "path": "3_Characters/Max.html",
     "category": "Characters",
-    "content": "De vriendelijke spin die ons 3 sessies lang geholpen heeft. RIP Max. To live in hearts we leave behind is not to die",
+    "content": "De vriendelijke spin die ons 2 sessies lang geholpen heeft. RIP Max. To live in hearts we leave behind is not to die",
     "frontmatter": {
       "tags": [
         "npc"
@@ -892,7 +894,7 @@
     "title": "Strahd von Zarovich",
     "path": "3_Characters/Strahd von Zarovich.html",
     "category": "Characters",
-    "content": "De heerser over Barovia en een krachtige vampier. Hij woont in Castle Ravenloft . Hij heeft talloze krachten, die hij waarschijnlijk heeft gehaald uit de Amber Temple .",
+    "content": "De heerser over Barovia en een krachtige vampier. Ook wel bekend als \"de duivel\". Hij woont in Castle Ravenloft . Hij heeft talloze krachten, die hij waarschijnlijk heeft gehaald uit de Amber Temple .",
     "frontmatter": {
       "aliases": [
         "Strahd",
@@ -909,6 +911,20 @@
     ],
     "tags": [
       "npc"
+    ]
+  },
+  {
+    "title": "Udo Lucovich",
+    "path": "3_Characters/Udo Lucovich.html",
+    "category": "Characters",
+    "content": "De zoon van een oude vrouw in Vallaki . Stevige man, zwart haar, litteken over zijn oog, littekens op zijn handen. Izek had Udo gevangen genomen omdat hij niet blij was. Genris heeft Udo kunnen redden.",
+    "frontmatter": {
+      "aliases": [
+        "Udo"
+      ]
+    },
+    "aliases": [
+      "Udo"
     ]
   },
   {
@@ -932,14 +948,14 @@
     "title": "Vader Donavich",
     "path": "3_Characters/Vader Donavich.html",
     "category": "Characters",
-    "content": "",
+    "content": "De priester van de kerk van Barovia .html).",
     "frontmatter": {}
   },
   {
     "title": "Vader Lucian Petrovich",
     "path": "3_Characters/Vader Lucian Petrovich.html",
     "category": "Characters",
-    "content": "",
+    "content": "De priester van de Kerk van St. Andral in Vallaki .",
     "frontmatter": {}
   },
   {
