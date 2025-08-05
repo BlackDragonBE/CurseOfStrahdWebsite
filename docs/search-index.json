@@ -259,7 +259,7 @@
     "title": "3_cos",
     "path": "1_SessionNotes/3_cos.html",
     "category": "Session Notes",
-    "content": "Huis (kelder) Terra verdeeld een schat dat hij vond Ladder op, kamer gevonden Verdacht proper de kamer, ook de wijn heeft geen stof erop, opgezette wolven en hertenkop We gaan richting gezang “Hij is de heerser, hij is het land” wordt er gezongen 10-15 stemmen Kamer met veel nissen, ketting gevonden met duivelskop Kamers met skeletten aan kettingen naast nis kamer In skelet kamer, zwart gewaad, had gouden ring aan hand, meegepakt Er zit een sterk monster in de altaar kamer, Glim en Genris kennen...",
+    "content": "Huis (kelder) Tera verdeeld een schat dat hij vond Ladder op, kamer gevonden Verdacht proper de kamer, ook de wijn heeft geen stof erop, opgezette wolven en hertenkop We gaan richting gezang “Hij is de heerser, hij is het land” wordt er gezongen 10-15 stemmen Kamer met veel nissen, ketting gevonden met duivelskop Kamers met skeletten aan kettingen naast nis kamer In skelet kamer, zwart gewaad, had gouden ring aan hand, meegepakt Er zit een sterk monster in de altaar kamer, Glim en Genris kennen ...",
     "frontmatter": {
       "sessionDate": "2023-05-28",
       "startLocation": "\"[[Durst House]]\"",
@@ -629,7 +629,7 @@
     "title": "Blinsky",
     "path": "3_Characters/Blinsky.html",
     "category": "Characters",
-    "content": "Eigenaar van de speelgoedwinkel in Vallaki . Is niet leuk, is niet Blinsky!",
+    "content": "Eigenaar van de speelgoedwinkel in Vallaki . Is niet leuk, is niet Blinsky! Goed gezette vent, goatee, jester’s outfit. Heeft aapje op zijn schouder dat Picollo heet. Blinsky heeft Picollo gekregen van Rictavio , de circus-directeur.",
     "frontmatter": {
       "aliases": [
         "Blinsky",
@@ -645,7 +645,7 @@
     "title": "Davian Martikov",
     "path": "3_Characters/Davian Martikov.html",
     "category": "Characters",
-    "content": "Oprichter van de Wijngaard . Vader van Urwin Martikov . Kan in een raaf veranderen en terug. Deel van de orde van de raven Quest: Ze maken nog andere wijn, daarvoor hebben ze 3 magische edelstenen nodig. 2 ervan zijn gestolen, 1 zijn door de Firbolgs, de andere is door Baba Lisaga meegenomen Als we de kristallen terug bezorgen, kunnen we maandelijks 4 tot 6 flessen wijn krijgen 1 edelsteen gegeven, ze kunnen al terug beginnen met Red Dragon Crush ze hebben ook nog gerief voor Purple Grape Smash ...",
+    "content": "Oprichter van de Wijngaard . Vader van Urwin Martikov . Kan in een raaf veranderen en terug. Deel van de orde van de raven Quest: Edelstenen voor wijngaard",
     "frontmatter": {
       "aliases": [
         "Davian",
@@ -683,8 +683,15 @@
     "title": "Erevan Corvus",
     "path": "3_Characters/Erevan Corvus.html",
     "category": "Characters",
-    "content": "Een kennis van Terra die op dezelfde school, de School of Creation.",
-    "frontmatter": {}
+    "content": "Een kennis van Tera die op dezelfde school, de School of Creation. Hij viel ons aan nadat we optraden voor het circus . Hij vloog rond en was op een hoorn aan het blazen dat ervoor zorgde dat er een soort blauwe energie uit de nabije jagers vloog. Door Erevan is Oleg dood.",
+    "frontmatter": {
+      "aliases": [
+        "Erevan"
+      ]
+    },
+    "aliases": [
+      "Erevan"
+    ]
   },
   {
     "title": "Eva",
@@ -848,7 +855,7 @@
     "title": "Rictavio",
     "path": "3_Characters/Rictavio.html",
     "category": "Characters",
-    "content": "Extravagante eigenaar van een lokaal circus. Zijn echte naam is Rudolph van Richten , een vampierjager. Hij gebruikt de naam Rictavio om niet op te vallen en info te verzamelen.",
+    "content": "Extravagante eigenaar van een lokaal circus. Een fel geklede half-elf. Zijn echte naam is Rudolph van Richten , een vampierjager. Hij gebruikt de naam Rictavio om niet op te vallen en info te verzamelen.",
     "frontmatter": {
       "npcStatus": "Alive",
       "npcProperties": [
@@ -1013,7 +1020,7 @@
     "title": "De party",
     "path": "3_Characters/_Players/De party.html",
     "category": "Characters",
-    "content": "Leden: Genris Glim Niobe Terra",
+    "content": "Leden: Genris Glim Niobe Tera",
     "frontmatter": {
       "aliases": [
         "de party",
@@ -1031,7 +1038,7 @@
     "title": "Genris",
     "path": "3_Characters/_Players/Genris.html",
     "category": "Characters",
-    "content": "Race: Firbolg Class: Druid",
+    "content": "Name Race Class Background Genris Firbolg Druid ( Circle of the Moon ) ?",
     "frontmatter": {
       "npcStatus": "Player Character"
     }
@@ -1057,19 +1064,27 @@
     "title": "Niobe",
     "path": "3_Characters/_Players/Niobe.html",
     "category": "Characters",
-    "content": "Name: Niobe Race: Tabaxi Class: Paladin",
+    "content": "Name Race Class Background Niobe Tabaxi Paladin (?) ?",
     "frontmatter": {
       "npcStatus": "Player Character"
     }
   },
   {
-    "title": "Terra",
-    "path": "3_Characters/_Players/Terra.html",
+    "title": "Tera",
+    "path": "3_Characters/_Players/Tera.html",
     "category": "Characters",
-    "content": "Name: Terra Race: Minotaur Class: Bard",
+    "content": "Name Race Class Background Terakar Stonehunter Minotaur Bard ( College of Creation ) ?",
     "frontmatter": {
-      "npcStatus": "Player Character"
-    }
+      "npcStatus": "Player Character",
+      "aliases": [
+        "Terra",
+        "Terakar"
+      ]
+    },
+    "aliases": [
+      "Terra",
+      "Terakar"
+    ]
   },
   {
     "title": "Champagne du le Stomp",
@@ -1112,7 +1127,7 @@
     "title": "Meat pies",
     "path": "5_Concepts/Meat pies.html",
     "category": "Concepts",
-    "content": "Eerste keer in Barovia .html) gegeten door Glim . Genris en Terra Sinds Terra ervan at en KO ging, heeft hij vreemde dromen Worden gemaakt in een Windmolen . Heel verslavend",
+    "content": "Eerste keer in Barovia .html) gegeten door Glim . Genris en Tera Sinds Terra ervan at en KO ging, heeft hij vreemde dromen Worden gemaakt in een Windmolen . Heel verslavend",
     "frontmatter": {
       "aliases": [
         "Meat pies",
@@ -1173,7 +1188,7 @@
     "title": "Edelstenen voor wijngaard",
     "path": "7_Quests/Done/Edelstenen voor wijngaard.html",
     "category": "Quests",
-    "content": "",
+    "content": "De wijngaard was deels verwoest. Om opnieuw wijn te maken hebben ze 3 magische edelstenen nodig. 2 ervan zijn gestolen, 1 zijn door de Firbolgs, de andere is door Baba Lysaga meegenomen Als we de kristallen terug bezorgen, kunnen we maandelijks 4 tot 6 flessen wijn krijgen 1 edelsteen gegeven, ze kunnen al terug beginnen met Red Dragon Crush ze hebben ook nog gerief voor Purple Grape Smash nog 1 edelsteen en ze kunnen Champagne Du Le Stomp beginnen maken We hebben de edelsteen van Baba Lisaga La...",
     "frontmatter": {
       "tags": [
         "quest"
@@ -1187,7 +1202,7 @@
     "title": "De abdij van Markovia",
     "path": "7_Quests/In Progress/De abdij van Markovia.html",
     "category": "Quests",
-    "content": "De abt van de Abdij is verdacht: Hij is veel ouder dan hij lijkt Zijn ware gedaante kennen we niet We vermoeden dat hij lijken steelt Er zijn 3 dienaars die niet volledig mens zijn: Otto, de half-wolf man Clovin, man met 2 hoofden, een klauw en een berenpoot Zygrvek: Vrouw, half gezicht hagedis, wat wolvenvacht, voor de rest vrouwelijk gezicht In de hal van de abdij hebben we een lichtzwaard gevonden. Terra gebruikt deze. Er is een weerwolf in Krezk , heeft dat iets te maken met de abdij?",
+    "content": "De abt van de Abdij is verdacht: Hij is veel ouder dan hij lijkt Zijn ware gedaante kennen we niet We vermoeden dat hij lijken steelt Er zijn 3 dienaars die niet volledig mens zijn: Otto, de half-wolf man Clovin, man met 2 hoofden, een klauw en een berenpoot Zygrvek: Vrouw, half gezicht hagedis, wat wolvenvacht, voor de rest vrouwelijk gezicht In de hal van de abdij hebben we een lichtzwaard gevonden. Tera gebruikt deze. Er is een weerwolf in Krezk , heeft dat iets te maken met de abdij?",
     "frontmatter": {}
   },
   {
@@ -1201,7 +1216,7 @@
     "title": "De meat pies en de windmolen",
     "path": "7_Quests/Inactive/De meat pies en de windmolen.html",
     "category": "Quests",
-    "content": "Zie Windmolen en Meat pies . Terra was een tijd onder de invloed van de verslavende Meat pies .",
+    "content": "Zie Windmolen en Meat pies . Tera was een tijd onder de invloed van de verslavende Meat pies .",
     "frontmatter": {}
   },
   {
