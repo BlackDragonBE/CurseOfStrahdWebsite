@@ -240,6 +240,22 @@
     ]
   },
   {
+    "title": "24_cos",
+    "path": "1_SessionNotes/24_cos.html",
+    "category": "Session Notes",
+    "content": "Amber Temple Sub-sectie Notitie Notitie",
+    "frontmatter": {
+      "sessionDate": "2025-08-24",
+      "startLocation": "\"[[Amber Temple]]\"",
+      "tags": [
+        "session-note"
+      ]
+    },
+    "tags": [
+      "session-note"
+    ]
+  },
+  {
     "title": "2_cos",
     "path": "1_SessionNotes/2_cos.html",
     "category": "Session Notes",
@@ -464,6 +480,13 @@
     "path": "2_Locations/Durst House.html",
     "category": "Locations",
     "content": "",
+    "frontmatter": {}
+  },
+  {
+    "title": "Feywild",
+    "path": "2_Locations/Feywild.html",
+    "category": "Locations",
+    "content": "The Feywild is a parallel plane of existence that mirrors the Material Plane but is infused with wild, primal magic and raw emotion. It is a realm of eternal twilight and vibrant colors, where time flows differently and the laws of nature bend to the whims of powerful fey creatures. This mystical realm is the birthplace of Glim , who lived in a forest village in the Faria Woods , the Feywild echo of the Neverwinter Woods . Together with his siblings Omos and Chia , he experienced the wonder and ...",
     "frontmatter": {}
   },
   {
