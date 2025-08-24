@@ -660,6 +660,13 @@
     ]
   },
   {
+    "title": "Chia",
+    "path": "3_Characters/Chia.html",
+    "category": "Characters",
+    "content": "Zus van Glim",
+    "frontmatter": {}
+  },
+  {
     "title": "Davian Martikov",
     "path": "3_Characters/Davian Martikov.html",
     "category": "Characters",
@@ -868,6 +875,13 @@
     "tags": [
       "npc"
     ]
+  },
+  {
+    "title": "Omos",
+    "path": "3_Characters/Omos.html",
+    "category": "Characters",
+    "content": "Broer van Glim",
+    "frontmatter": {}
   },
   {
     "title": "Rictavio",
