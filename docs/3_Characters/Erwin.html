@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erwin - Curse of Strahd Campaign</title>
+    <link rel="preload" href="../images/background.jpeg" as="image">
+    <style>
+        body { 
+            margin: 0; 
+            background: #0a0a0b; 
+            color: #ffffff; 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', roboto, sans-serif;
+            opacity: 0;
+            transition: opacity 0.1s ease-in;
+        }
+        body.loaded { opacity: 1; }
+    </style>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <ul>
+                <li><a href="../1_SessionNotes/index.html">Session Notes</a></li>
+                <li><a href="../2_Locations/index.html">Locations</a></li>
+                <li><a href="../3_Characters/index.html">Characters</a></li>
+                <li><a href="../4_Items/index.html">Items</a></li>
+                <li><a href="../5_Concepts/index.html">Concepts</a></li>
+                <li><a href="../7_Quests/index.html">Quests</a></li>
+                <li><a href="../8_Custom/index.html">Custom</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <article>
+            <h1>Erwin</h1>
+            <div class="note-properties">
+        <ul class="properties-list">
+            <li><span class="property-key">NpcProperties:</span> <span class="property-value">"[[Strahd von Zarovich|Strahd]]"</span></li>
+<li><span class="property-key">NpcStatus:</span> <span class="property-value">Alive</span></li>
+        </ul>
+    </div>
+            <p>Oude mentor van <a href="../3_Characters/_Players/Tera.html">Tera</a>.
+Een bard die zich heeft verdiept in zielenmagie en voor Strahd werkt.</p>
+
+        </article>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.classList.add('loaded');
+        });
+    </script>
+    <script>
+        // Live reload WebSocket connection
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') {
+            const ws = new WebSocket('ws://localhost:35729');
+            ws.onmessage = function(event) {
+                if (event.data === 'reload') {
+                    console.log('📄 Reloading page...');
+                    location.reload();
+                }
+            };
+            ws.onopen = function() {
+                console.log('🔌 Connected to live reload server');
+            };
+            ws.onclose = function() {
+                console.log('🔌 Disconnected from live reload server');
+            };
+        }
+    </script>
+    <script src="../search.js"></script>
+</body>
+</html>

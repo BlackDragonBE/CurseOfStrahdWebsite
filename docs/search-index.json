@@ -243,7 +243,7 @@
     "title": "24_cos",
     "path": "1_SessionNotes/24_cos.html",
     "category": "Session Notes",
-    "content": "Amber Temple Sub-sectie Notitie Notitie",
+    "content": "De Amber Tempel - Pilaren Van Macht De Laatste Kamer De party staat voor de laatste gesloten deur in de Amber Tempel. Genris dispelt de deur en ze betreden een kamer met amber muren en zwart-grijze marmeren vloer. Er staan drie nissen met pilaren. Pilaren Van Duistere Macht [!warning] Duistere Krachten Elke pilaar biedt een andere duistere kracht aan in ruil voor een prijs Glim raakt de zuidelijke pilaar aan: Krijgt de kracht om helhounds op te roepen Begint plots Infernal te spreken (niemand ve...",
     "frontmatter": {
       "sessionDate": "2025-08-24",
       "startLocation": "\"[[Amber Temple]]\"",
@@ -717,6 +717,18 @@
     "aliases": [
       "Erevan"
     ]
+  },
+  {
+    "title": "Erwin",
+    "path": "3_Characters/Erwin.html",
+    "category": "Characters",
+    "content": "Oude mentor van Tera . Een bard die zich heeft verdiept in zielenmagie en voor Strahd werkt.",
+    "frontmatter": {
+      "npcProperties": [
+        "\"[[Strahd von Zarovich|Strahd]]\""
+      ],
+      "npcStatus": "Alive"
+    }
   },
   {
     "title": "Eva",
